@@ -76,7 +76,7 @@ export function CertificationsSection() {
               key={cert.title}
               variants={fadeUp}
               custom={i * 0.05}
-              className="group bg-white rounded-xl p-6 border border-stroke hover:border-primary/20 hover:shadow-soft-lg transition-all duration-400"
+              className="group bg-white rounded-xl p-6 border border-stroke transition-all duration-400 hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-elevated hover:border-primary/30"
             >
               <span className="w-10 h-10 rounded-full bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-400 mb-4">
                 <Icon size={18} strokeWidth={1.5} />

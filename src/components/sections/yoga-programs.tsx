@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Heart, Sun, Sparkles, Leaf, Users, Brain, Wind, MessageCircle } from "lucide-react"
+import { ArrowUpRight, Heart, Sun, Sparkles, Leaf, MessageCircle } from "lucide-react"
 import { whatsappUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp"
 
 const characteristics = [
@@ -75,7 +75,7 @@ export function YogaProgramsSection() {
             return (
               <div
                 key={char.label}
-                className="flex items-center gap-3 px-4 py-3 border border-stroke rounded-lg"
+                className="flex items-center gap-3 px-4 py-3 border border-stroke rounded-lg transition-all duration-300 hover:border-primary"
               >
                 <Icon size={18} className="text-primary flex-shrink-0" />
                 <span className="text-xs font-sans font-medium uppercase tracking-wider text-deep">
@@ -98,11 +98,12 @@ export function YogaProgramsSection() {
             key={cls.title}
             variants={fadeUp}
             custom={i * 0.1}
+            className="transition-all duration-400 hover:-translate-y-1 hover:scale-[1.02]"
           >
             <Link href="/yoga" className="group block">
               <div className="aspect-[4/5] rounded-lg overflow-hidden relative">
                 <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ backgroundImage: `url('${cls.image}')` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
@@ -133,7 +134,7 @@ export function YogaProgramsSection() {
       <div className="mt-16 border-t border-dashed border-stroke pt-8 flex flex-wrap items-center justify-center gap-4">
         <Link
           href="/yoga"
-          className="group inline-flex items-center gap-2 px-5 py-2 bg-white text-primary border border-primary rounded-full text-base font-sans font-medium hover:bg-primary-hover hover:text-white transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2 bg-white text-primary border border-primary rounded-full text-base font-sans font-medium hover:bg-primary-hover hover:text-white transition-all duration-300 hover-scale"
         >
           View All Programs
           <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-300">
@@ -144,7 +145,7 @@ export function YogaProgramsSection() {
           href={whatsappUrl(WHATSAPP_MESSAGES.yoga)}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300 hover-scale"
         >
           <MessageCircle size={16} />
           Enquire via WhatsApp

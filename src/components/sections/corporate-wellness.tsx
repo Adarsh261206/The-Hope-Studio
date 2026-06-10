@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Building2, School, Hospital, Users, Briefcase, UsersRound } from "lucide-react"
+import { ArrowUpRight, Building2, School, Hospital, Users } from "lucide-react"
 
 const programs = [
   {
@@ -54,7 +54,7 @@ export function CorporateWellnessSection() {
           <div className="mt-8 flex items-center gap-4 sm:gap-6">
             <Link
               href="/corporate-wellness"
-              className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300 hover-scale"
             >
               Explore Programs
               <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-all duration-300">
@@ -83,7 +83,7 @@ export function CorporateWellnessSection() {
               >
                 <Link
                   href={prog.link}
-                  className="group block p-6 sm:p-8 border border-stroke rounded-xl hover:border-primary/20 hover:shadow-soft-lg transition-all duration-400 h-full"
+                  className="group block p-6 sm:p-8 border border-stroke rounded-xl h-full transition-all duration-400 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-elevated hover:border-primary/30"
                 >
                   <span className="w-10 h-10 rounded-lg bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-400 mb-4">
                     <Icon size={20} strokeWidth={1.5} />

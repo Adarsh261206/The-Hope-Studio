@@ -213,6 +213,46 @@
     }
   }
 
+  /* ── Smooth transition utility ── */
+  .transition-smooth {
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* ── Hover lift effect ── */
+  .hover-lift {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ── Card glow on hover ── */
+  .hover-glow {
+    transition: box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* ── Scrollbar styling ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(134, 100, 82, 0.2);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(134, 100, 82, 0.4);
+  }
+
   @keyframes scroll-left {
     0% {
       transform: translateX(0);
@@ -232,53 +272,144 @@
   }
 
   .animate-scroll-left {
-    animation: scroll-left 35s linear infinite;
+    animation: scroll-left 40s linear infinite;
   }
 
   @media (max-width: 639px) {
     .animate-scroll-left {
-      animation: scroll-left 25s linear infinite;
+      animation: scroll-left 28s linear infinite;
     }
   }
 
   .animate-scroll-right {
-    animation: scroll-right 35s linear infinite;
+    animation: scroll-right 40s linear infinite;
   }
 
   @media (max-width: 639px) {
     .animate-scroll-right {
-      animation: scroll-right 25s linear infinite;
+      animation: scroll-right 28s linear infinite;
     }
   }
 
   @keyframes float-1 {
-    0%, 100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-12px); }
   }
 
   @keyframes float-2 {
-    0%, 100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-8px); }
   }
 
   @keyframes float-3 {
-    0%, 100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-14px); }
   }
 
   @keyframes float-4 {
-    0%, 100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-6px); }
   }
 
   @keyframes float-5 {
-    0%, 100% { transform: translateY(0); }
+    0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
 
-  .animate-float-1 { animation: float-1 4s ease-in-out infinite; }
-  .animate-float-2 { animation: float-2 3.5s ease-in-out infinite; }
-  .animate-float-3 { animation: float-3 4.5s ease-in-out infinite; }
-  .animate-float-4 { animation: float-4 3.8s ease-in-out infinite; }
-  .animate-float-5 { animation: float-5 4.2s ease-in-out infinite; }
+  .animate-float-1 { animation: float-1 5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+  .animate-float-2 { animation: float-2 4.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+  .animate-float-3 { animation: float-3 5.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+  .animate-float-4 { animation: float-4 4.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+  .animate-float-5 { animation: float-5 5.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35); }
+    50% { box-shadow: 0 4px 35px rgba(37, 211, 102, 0.55), 0 0 60px rgba(37, 211, 102, 0.15); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+    will-change: box-shadow;
+  }
+
+  /* ── GPU-accelerated hover scale (no JS, pure CSS) ── */
+  .hover-scale {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.03);
+  }
+
+  .hover-scale-sm:hover {
+    transform: scale(1.02);
+  }
+
+  /* ── Lift card effect ── */
+  .hover-lift-card {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                border-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+  }
+
+  .hover-lift-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary-300);
+  }
+
+  /* ── Will-change utility for GPU layers ── */
+  .gpu-layer {
+    will-change: transform;
+  }
+
+  /* ── Reduced motion ── */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.1ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .animate-scroll-left,
+    .animate-scroll-right,
+    .animate-float-1,
+    .animate-float-2,
+    .animate-float-3,
+    .animate-float-4,
+    .animate-float-5,
+    .animate-pulse-glow {
+      animation: none !important;
+    }
+  }
+
+  /* ── Mobile performance optimizations ── */
+  @media (max-width: 639px) {
+    .hover-lift-card:hover {
+      transform: none;
+      box-shadow: none;
+    }
+
+    .hover-scale:hover {
+      transform: none;
+    }
+
+    .gpu-layer-mobile {
+      will-change: transform;
+    }
+
+    .animate-float-1,
+    .animate-float-2,
+    .animate-float-3,
+    .animate-float-4,
+    .animate-float-5 {
+      animation: none !important;
+    }
+  }
 }

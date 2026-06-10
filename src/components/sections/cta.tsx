@@ -31,7 +31,12 @@ const contactDetails = [
 export function CTASection() {
   return (
     <Section className="bg-deep text-white overflow-hidden relative" id="cta">
-      <div className="absolute inset-0 opacity-[0.04]">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.04 }}
+        transition={{ duration: 1.5 }}
+        className="absolute inset-0"
+      >
         <div
           className="w-full h-full bg-cover bg-center"
           style={{
@@ -39,14 +44,14 @@ export function CTASection() {
               "url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070&auto=format&fit=crop')",
           }}
         />
-      </div>
+      </motion.div>
 
       <div className="relative z-[2] grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <span className="subtitle-text inline-block mb-4 text-white/50">
             Begin Your Journey
@@ -63,10 +68,10 @@ export function CTASection() {
               href={whatsappUrl(WHATSAPP_MESSAGES.consultation)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-5 py-2 bg-white text-primary rounded-full text-base font-sans font-medium hover:bg-white/90 transition-all duration-300 active:scale-[0.97]"
+              className="group inline-flex items-center gap-2 px-5 py-2 bg-white text-primary rounded-full text-base font-sans font-medium hover:bg-white/90 transition-all duration-300 hover-scale"
             >
               Book Your Consultation
-              <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-primary text-white flex items-center justify-center group-hover:bg-primary-hover transition-all duration-300">
+              <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-primary text-white flex items-center justify-center transition-all duration-300 group-hover:bg-primary-hover group-hover:rotate-12">
                 <ArrowUpRight size={16} strokeWidth={2} />
               </span>
             </a>
@@ -74,7 +79,7 @@ export function CTASection() {
               href={whatsappUrl(WHATSAPP_MESSAGES.enquiry)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-5 py-2 border border-white/20 text-white/80 rounded-full text-base font-sans font-medium hover:bg-white/10 hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-2 px-5 py-2 border border-white/20 text-white/80 rounded-full text-base font-sans font-medium hover:bg-white/10 hover:text-white transition-all duration-300 hover-scale"
             >
               <MessageCircle size={16} />
               WhatsApp Us
@@ -85,16 +90,16 @@ export function CTASection() {
         <motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-3"
         >
-          {contactDetails.map((detail) => {
+          {contactDetails.map((detail, i) => {
             const Icon = detail.icon
             return (
               <div
                 key={detail.label}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/10 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5"
               >
                 <div className="flex items-start gap-3">
                   <span className="w-9 h-9 rounded-lg bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">

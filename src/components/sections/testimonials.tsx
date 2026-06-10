@@ -101,7 +101,13 @@ export function TestimonialsSection() {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        <Quote size={40} className="text-primary/30 mx-auto mb-6" strokeWidth={1} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Quote size={40} className="text-primary/30 mx-auto mb-6" strokeWidth={1} />
+        </motion.div>
 
         <div className="relative h-[15rem] sm:h-[13rem] overflow-hidden">
           <AnimatePresence mode="wait" custom={direction}>
@@ -112,7 +118,7 @@ export function TestimonialsSection() {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               className="body-large text-white/80 leading-relaxed italic"
             >
               &ldquo;{t.quote}&rdquo;
@@ -120,49 +126,54 @@ export function TestimonialsSection() {
           </AnimatePresence>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-4">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div
-                className="w-12 h-12 rounded-full bg-cover bg-center mx-auto"
-                style={{ backgroundImage: `url('${t.image}')` }}
-              />
-            </motion.div>
-          </AnimatePresence>
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 150, damping: 15 }}
+          className="mt-8 flex items-center justify-center gap-4"
+        >
+          <div
+            className="w-12 h-12 rounded-full bg-cover bg-center mx-auto"
+            style={{ backgroundImage: `url('${t.image}')` }}
+          />
           <div className="text-left">
             <p className="text-sm font-sans font-semibold text-white">{t.name}</p>
             <p className="text-xs text-white/50 font-sans">{t.role}</p>
           </div>
-        </div>
+        </motion.div>
 
         <div className="mt-8 flex items-center justify-center gap-3">
-          <button
+          <motion.button
             onClick={goPrev}
-            className="w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all duration-300 flex items-center justify-center text-sm"
+            whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.4)" }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-colors duration-300 flex items-center justify-center text-sm"
           >
             ←
-          </button>
+          </motion.button>
           {testimonials.map((_, i) => (
-            <button
+            <motion.button
               key={i}
               onClick={() => goTo(i)}
+              whileHover={{ scale: 1.3 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
               className={`w-2 h-2 rounded-full transition-all duration-500 ${
                 i === current ? "bg-primary w-6" : "bg-white/20 hover:bg-white/40"
               }`}
             />
           ))}
-          <button
+          <motion.button
             onClick={goNext}
-            className="w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-all duration-300 flex items-center justify-center text-sm"
+            whileHover={{ scale: 1.1, borderColor: "rgba(255,255,255,0.4)" }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className="w-8 h-8 rounded-full border border-white/20 text-white/60 hover:text-white hover:border-white/40 transition-colors duration-300 flex items-center justify-center text-sm"
           >
             →
-          </button>
+          </motion.button>
         </div>
       </div>
     </Section>

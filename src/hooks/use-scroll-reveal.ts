@@ -43,12 +43,35 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>({
 
 const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94]
 
+const spring = {
+  type: "spring" as const,
+  stiffness: 120,
+  damping: 20,
+  mass: 0.8,
+}
+
+const springStagger = {
+  type: "spring" as const,
+  stiffness: 100,
+  damping: 18,
+  mass: 0.7,
+}
+
 const anim = {
   hidden: { opacity: 0, y: 40 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay, ease },
+    transition: { duration: 0.7, delay, ease },
+  }),
+}
+
+const animSpring = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { ...spring, delay },
   }),
 }
 
@@ -56,7 +79,7 @@ const animIn = {
   hidden: { opacity: 0 },
   visible: (delay: number = 0) => ({
     opacity: 1,
-    transition: { duration: 0.6, delay, ease: "easeOut" },
+    transition: { duration: 0.7, delay, ease: "easeOut" },
   }),
 }
 
@@ -66,6 +89,18 @@ const stagger = {
     transition: {
       staggerChildren: 0.1,
       delayChildren: 0.1,
+      ...springStagger,
+    },
+  },
+}
+
+const staggerSpring = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+      ...springStagger,
     },
   },
 }
@@ -75,7 +110,16 @@ const scaleAnim = {
   visible: (delay: number = 0) => ({
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.6, delay, ease },
+    transition: { duration: 0.7, delay, ease },
+  }),
+}
+
+const scaleSpring = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { ...spring, delay },
   }),
 }
 
@@ -84,7 +128,7 @@ const slideL = {
   visible: (delay: number = 0) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, delay, ease },
+    transition: { duration: 0.7, delay, ease },
   }),
 }
 
@@ -93,7 +137,7 @@ const slideR = {
   visible: (delay: number = 0) => ({
     opacity: 1,
     x: 0,
-    transition: { duration: 0.6, delay, ease },
+    transition: { duration: 0.7, delay, ease },
   }),
 }
 
@@ -105,4 +149,25 @@ const clipR = {
   }),
 }
 
-export { anim as fadeUp, animIn as fadeIn, stagger as staggerContainer, scaleAnim as scaleIn, slideL as slideLeft, slideR as slideRight, clipR as clipReveal }
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: (delay: number = 0) => ({
+    opacity: 1,
+    scale: 1,
+    transition: { ...spring, delay },
+  }),
+}
+
+export {
+  anim as fadeUp,
+  animSpring as fadeUpSpring,
+  animIn as fadeIn,
+  stagger as staggerContainer,
+  staggerSpring as staggerContainerSpring,
+  scaleAnim as scaleIn,
+  scaleSpring as scaleInSpring,
+  slideL as slideLeft,
+  slideR as slideRight,
+  clipR as clipReveal,
+  zoomIn as zoomInAnim,
+}

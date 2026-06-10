@@ -18,8 +18,7 @@ export function Card({
 }: CardProps) {
   const baseStyles = cn(
     "bg-white rounded-lg",
-    hover &&
-      "transition-all duration-400",
+    hover && "hover-lift-card",
     className
   )
 

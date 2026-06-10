@@ -20,7 +20,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 
   const itemAnim = (i: number) => ({
     hidden: { opacity: 0, x: -24 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.4, delay: 0.05 * i, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+    visible: { opacity: 1, x: 0, transition: { type: "spring" as const, stiffness: 120, damping: 20, mass: 0.6, delay: 0.05 * i } },
   })
 
   return (
@@ -30,7 +30,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }}
           className="fixed inset-0 z-40 lg:hidden"
         >
           <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={onClose} />
@@ -39,7 +39,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 32, stiffness: 280, mass: 0.8 }}
+            transition={{ type: "spring", damping: 28, stiffness: 260, mass: 0.7 }}
             className="absolute top-0 right-0 bottom-0 w-full max-w-sm bg-deep/98 backdrop-blur-2xl border-l border-white/5"
           >
             {/* Header */}
@@ -56,7 +56,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               </div>
               <button
                 onClick={onClose}
-                className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-lg border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-all active:scale-90"
+                className="w-11 h-11 rounded-full bg-white/10 backdrop-blur-lg border border-white/15 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 hover:scale-110 active:scale-90 transition-all duration-300"
                 aria-label="Close menu"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -84,7 +84,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                         {item.label}
                         <motion.div
                           animate={{ rotate: openIdx === i ? 180 : 0 }}
-                          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          transition={{ type: "spring", stiffness: 200, damping: 15 }}
                         >
                           <ChevronDown size={16} className="text-white/40" />
                         </motion.div>
@@ -95,7 +95,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: "auto", opacity: 1 }}
                             exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                            transition={{ type: "spring", stiffness: 150, damping: 20, mass: 0.6 }}
                             className="overflow-hidden"
                           >
                             <div className="pb-3 space-y-0.5">
@@ -104,7 +104,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                                   key={drop.label}
                                   initial={{ opacity: 0, x: -12 }}
                                   animate={{ opacity: 1, x: 0 }}
-                                  transition={{ delay: 0.03 * j, duration: 0.25 }}
+                                  transition={{ type: "spring", stiffness: 150, damping: 18, delay: 0.03 * j }}
                                 >
                                   <Link
                                     href={drop.href}
@@ -139,7 +139,7 @@ function MobileDrawer({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               <Link
                 href="/contact/book-appointment"
                 onClick={onClose}
-                className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white rounded-full text-sm font-sans font-medium tracking-wide hover:bg-primary-hover transition-all active:scale-[0.97] shadow-lg shadow-primary/20"
+                className="flex items-center justify-center gap-3 w-full py-4 bg-primary text-white rounded-full text-sm font-sans font-medium tracking-wide hover:bg-primary-hover hover:scale-[1.03] active:scale-[0.97] transition-all duration-300 shadow-lg shadow-primary/20"
               >
                 Book Appointment
                 <ArrowUpRight size={16} strokeWidth={2} />
@@ -158,19 +158,19 @@ function Hamburger({ open }: { open: boolean }) {
     <div className="relative w-5 h-4">
       <span
         className={cn(
-          "absolute left-0 block h-[1.5px] bg-current transition-all duration-300",
+          "absolute left-0 block h-[1.5px] bg-current transition-all duration-500 ease-out",
           open ? "top-1/2 w-full -translate-y-1/2 rotate-45" : "top-0 w-full"
         )}
       />
       <span
         className={cn(
-          "absolute left-0 top-1/2 block h-[1.5px] bg-current transition-all duration-300",
+          "absolute left-0 top-1/2 block h-[1.5px] bg-current transition-all duration-500 ease-out",
           open ? "opacity-0 w-0" : "w-[70%]"
         )}
       />
       <span
         className={cn(
-          "absolute left-0 block h-[1.5px] bg-current transition-all duration-300",
+          "absolute left-0 block h-[1.5px] bg-current transition-all duration-500 ease-out",
           open ? "top-1/2 w-full -translate-y-1/2 -rotate-45" : "bottom-0 w-full"
         )}
       />
@@ -197,19 +197,23 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled && "bg-white/80 backdrop-blur-2xl shadow-soft"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-out",
+          scrolled
+            ? "bg-white/60 backdrop-blur-2xl shadow-soft"
+            : "bg-transparent"
         )}
       >
         <nav className="container-main flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="relative z-10 py-2.5 sm:py-3 flex items-center gap-3">
-            <div
+            <motion.div
+              layout
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
               className={cn(
-                "rounded-[14px] overflow-hidden flex-shrink-0 transition-all duration-500",
+                "rounded-[14px] overflow-hidden flex-shrink-0 transition-shadow duration-500",
                 scrolled
                   ? "shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-black/5"
-                  : "shadow-[0_4px_16px_rgba(0,0,0,0.12)] border border-white/20"
+                  : "shadow-[0_4px_16px_rgba(0,0,0,0.06)] border border-black/5"
               )}
             >
               <Image
@@ -220,12 +224,12 @@ export function Navbar() {
                 className="h-[58px] sm:h-[68px] md:h-[76px] w-auto block"
                 priority
               />
-            </div>
+            </motion.div>
             <div className="leading-tight">
               <span
                 className={cn(
                   "block font-serif text-[0.95rem] sm:text-[1.05rem] md:text-[1.15rem] font-medium tracking-[0.02em] transition-colors duration-500",
-                  scrolled ? "text-deep" : "text-white"
+                  "text-deep"
                 )}
               >
                 THE HOPE
@@ -233,7 +237,7 @@ export function Navbar() {
               <span
                 className={cn(
                   "block text-[0.55rem] sm:text-[0.6rem] md:text-[0.65rem] font-sans font-medium uppercase tracking-[0.12em] transition-colors duration-500",
-                  scrolled ? "text-text-body" : "text-white/70"
+                  "text-text-body"
                 )}
               >
                 Yoga Wellness Studio
@@ -253,17 +257,17 @@ export function Navbar() {
                     isActive(item.href)
                       ? scrolled
                         ? "bg-deep text-white border-deep/30 shadow-sm"
-                        : "bg-white text-deep border-white/30 shadow-sm"
+                        : "bg-deep text-cream border-deep/30 shadow-sm"
                       : scrolled
                         ? "bg-white/10 text-deep/80 border-white/20 hover:bg-white/20 hover:text-deep"
-                        : "bg-white/10 text-white/85 border-white/15 hover:bg-white/20 hover:text-white"
+                        : "bg-deep/5 text-deep/85 border-deep/10 hover:bg-deep/10 hover:text-deep"
                   )}
                 >
                   {item.label}
                 </Link>
 
                 {item.megaMenu && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 translate-y-2 group-hover:translate-y-0">
                     <div className="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-elevated border border-stroke/40 overflow-hidden min-w-[34rem]">
                       <div className="flex">
                         <div className="w-[13rem] flex-shrink-0 p-7 bg-cream/60">
@@ -286,7 +290,7 @@ export function Navbar() {
                                   <ArrowUpRight
                                     size={13}
                                     strokeWidth={1.5}
-                                    className="text-primary/0 group-hover/menu:text-primary transition-all duration-300 -translate-x-2 opacity-0 group-hover/menu:translate-x-0 group-hover/menu:opacity-100"
+                                    className="text-primary opacity-0 group-hover/menu:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover/menu:translate-x-0"
                                   />
                                 </Link>
                               </li>
@@ -299,19 +303,19 @@ export function Navbar() {
                 )}
 
                 {item.dropdown && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 pt-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-400 translate-y-2 group-hover:translate-y-0">
                     <div className="bg-white/95 backdrop-blur-2xl rounded-2xl shadow-elevated border border-stroke/40 overflow-hidden min-w-[14rem] py-2">
                       {item.dropdown.map((drop, j) => (
                         <Link
                           key={drop.label}
                           href={drop.href}
-                          className="flex items-center justify-between px-5 py-2.5 text-sm font-sans font-medium transition-all duration-300 text-text-body hover:text-deep hover:bg-cream"
+                          className="group/menu flex items-center justify-between px-5 py-2.5 text-sm font-sans font-medium transition-all duration-300 text-text-body hover:text-deep hover:bg-cream"
                         >
                           <span>{drop.label}</span>
                           <ArrowUpRight
                             size={13}
                             strokeWidth={1.5}
-                            className="text-primary/0 group-hover/menu:text-primary transition-all duration-300 -translate-x-2 opacity-0 group-hover/menu:translate-x-0 group-hover/menu:opacity-100"
+                            className="text-primary opacity-0 group-hover/menu:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover/menu:translate-x-0"
                           />
                         </Link>
                       ))}
@@ -324,29 +328,35 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center">
-            <Link
-              href="/contact/book-appointment"
-              className={cn(
-                "px-7 py-2.5 text-sm font-sans font-medium tracking-wide rounded-full transition-all duration-300",
-                scrolled
-                  ? "bg-deep text-white hover:bg-deep-800"
-                  : "bg-white/15 backdrop-blur-lg text-white border border-white/20 hover:bg-white/25"
-              )}
+            <motion.div
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
             >
-              Book Appointment
-            </Link>
+              <Link
+                href="/contact/book-appointment"
+                className={cn(
+                  "px-7 py-2.5 text-sm font-sans font-medium tracking-wide rounded-full transition-all duration-300 block",
+                  scrolled
+                    ? "bg-deep text-white hover:bg-deep-800"
+                    : "bg-deep text-cream hover:bg-deep-800"
+                )}
+              >
+                Book Appointment
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={cn(
-              "relative z-50 lg:hidden w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300",
+              "relative z-50 lg:hidden w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 active:scale-90",
               mobileOpen
-                ? "bg-white/15 backdrop-blur-lg text-white border border-white/20"
+                ? "bg-deep/15 backdrop-blur-lg text-deep border border-deep/20"
                 : scrolled
                   ? "bg-deep/10 backdrop-blur-lg text-deep border border-deep/15"
-                  : "bg-white/15 backdrop-blur-lg text-white border border-white/20"
+                  : "bg-deep/10 backdrop-blur-lg text-deep border border-deep/15"
             )}
             aria-label="Toggle menu"
           >

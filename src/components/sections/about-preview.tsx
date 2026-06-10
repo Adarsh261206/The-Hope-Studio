@@ -75,30 +75,45 @@ export function AboutPreviewSection() {
               zIndex: item.zIndex,
             }}
           >
-            <div className="w-full h-full rounded-lg overflow-hidden">
+            <div className="w-full h-full rounded-lg overflow-hidden transition-transform duration-500 hover:scale-[1.02]">
               <div
-                className="w-full h-full bg-cover bg-center"
+                className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out hover:scale-105"
                 style={{ backgroundImage: `url('${item.img}')` }}
               />
             </div>
-            <div className="absolute top-4 left-4 bg-white rounded-lg px-3 py-2 shadow-soft flex items-center gap-2">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+              className="absolute top-4 left-4 bg-white rounded-lg px-3 py-2 shadow-soft flex items-center gap-2"
+            >
               <span className={`w-2 h-2 rounded-full ${item.dotColor}`} />
               <span className="text-xs font-sans font-medium text-deep">
                 {item.label}
               </span>
-            </div>
+            </motion.div>
           </motion.div>
         ))}
         <div className="h-[28rem] md:h-[32rem]" />
       </motion.div>
 
       <div className="max-w-3xl mx-auto text-center mb-16">
-        <p className="body-large text-text-body leading-relaxed">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="body-large text-text-body leading-relaxed"
+        >
           Founded by <strong className="text-deep">Aakash Bora</strong>, our mission is to help individuals achieve healthier, balanced, and stress-free lives through Yoga, Naturopathy, Nutrition, and Holistic Wellness.
-        </p>
-        <p className="body-large text-text-body leading-relaxed mt-4">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="body-large text-text-body leading-relaxed mt-4"
+        >
           With over <strong className="text-deep">11 years of experience</strong> and more than <strong className="text-deep">8,500 lives</strong> positively impacted, we have successfully guided individuals toward improved physical health, emotional well-being, mental clarity, and sustainable lifestyle changes.
-        </p>
+        </motion.p>
       </div>
 
       <motion.div
@@ -114,9 +129,14 @@ export function AboutPreviewSection() {
             custom={i * 0.1}
             className="py-8 md:py-10 px-6 md:px-8 border-r border-stroke last:border-r-0"
           >
-            <span className="heading-2 text-deep">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+              transition={{ type: "spring", stiffness: 150, damping: 15, delay: 0.2 + i * 0.1 }}
+              className="heading-2 text-deep block"
+            >
               {stat.value}
-            </span>
+            </motion.span>
             <h5 className="heading-5 text-deep mt-3">
               {stat.title}
             </h5>
@@ -135,10 +155,10 @@ export function AboutPreviewSection() {
       >
         <Link
           href="/about"
-          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300 hover-scale"
         >
           Know More
-          <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-white/90">
+          <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 group-hover:bg-white/90">
             <ArrowUpRight size={16} strokeWidth={2} />
           </span>
         </Link>

@@ -46,7 +46,7 @@ export function TreatmentsPreviewSection() {
               key={therapy.name}
               variants={fadeUp}
               custom={i * 0.1}
-              className="group relative bg-white rounded-xl p-6 border border-stroke hover:border-primary/20 hover:shadow-soft-lg transition-all duration-400"
+              className="group relative bg-white rounded-xl p-6 border border-stroke transition-all duration-400 hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-elevated hover:border-primary/30"
             >
               <div className="flex items-start justify-between mb-4">
                 <span className="w-12 h-12 rounded-xl bg-primary/5 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-400">
@@ -64,7 +64,7 @@ export function TreatmentsPreviewSection() {
                 href={whatsappUrl(WHATSAPP_MESSAGES.treatment(therapy.name))}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-1.5 text-xs font-sans font-medium text-primary hover:text-primary-hover transition-colors duration-300"
+                className="mt-4 inline-flex items-center gap-1.5 text-xs font-sans font-medium text-primary hover:text-primary-hover transition-all duration-300 hover:translate-x-0.5"
               >
                 <MessageCircle size={13} />
                 Enquire on WhatsApp
@@ -74,17 +74,22 @@ export function TreatmentsPreviewSection() {
         })}
       </motion.div>
 
-      <div className="mt-12 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="mt-12 text-center"
+      >
         <Link
           href="/treatments"
-          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300 hover-scale"
         >
           View All Treatments
           <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-all duration-300">
             <ArrowUpRight size={16} strokeWidth={2} />
           </span>
         </Link>
-      </div>
+      </motion.div>
     </Section>
   )
 }

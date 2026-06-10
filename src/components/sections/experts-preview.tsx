@@ -52,14 +52,17 @@ export function ExpertsPreviewSection() {
         className="grid grid-cols-1 md:grid-cols-3 gap-8"
       >
         {experts.map((expert, i) => (
-          <motion.div key={expert.name} variants={fadeUp} custom={i * 0.1}>
+          <motion.div
+            key={expert.name}
+            variants={fadeUp}
+            custom={i * 0.1}
+            className="transition-all duration-400 hover:-translate-y-1.5 hover:scale-[1.02]"
+          >
             <Link href={expert.href} className="group block">
-              <div
-                className="bg-white rounded-full overflow-hidden transition-all duration-400 group-hover:bg-primary p-4 pb-8"
-              >
+              <div className="bg-white rounded-full overflow-hidden transition-all duration-400 group-hover:bg-primary p-4 pb-8">
                 <div className="aspect-square rounded-full overflow-hidden max-w-[80%] mx-auto">
                   <div
-                    className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                     style={{ backgroundImage: `url('${expert.image}')` }}
                   />
                 </div>
@@ -88,7 +91,7 @@ export function ExpertsPreviewSection() {
       >
         <Link
           href="/experts"
-          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
+          className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300 hover-scale"
         >
           Meet the Full Team
           <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-colors duration-300">

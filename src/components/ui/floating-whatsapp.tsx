@@ -1,18 +1,12 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { whatsappUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp"
 
 export function FloatingWhatsApp() {
   return (
-    <motion.a
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5, delay: 1.5 }}
+    <a
       href={whatsappUrl(WHATSAPP_MESSAGES.enquiry)}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.35)] flex items-center justify-center hover:bg-[#20bd5a] hover:shadow-[0_6px_28px_rgba(37,211,102,0.45)] transition-all duration-300 active:scale-90"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] shadow-[0_4px_20px_rgba(37,211,102,0.35)] flex items-center justify-center hover:bg-[#20bd5a] hover:shadow-[0_6px_28px_rgba(37,211,102,0.45)] hover:scale-110 active:scale-85 transition-all duration-300 animate-pulse-glow"
       aria-label="Chat on WhatsApp"
     >
       <svg
@@ -31,6 +25,6 @@ export function FloatingWhatsApp() {
           fill="white"
         />
       </svg>
-    </motion.a>
+    </a>
   )
 }

@@ -1,7 +1,4 @@
-"use client"
-
 import * as React from "react"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/cn"
 import { ArrowUpRight } from "lucide-react"
 
@@ -26,7 +23,7 @@ export function Button({
   const baseStyles = cn(
     "group relative inline-flex items-center gap-2 font-sans font-medium transition-all duration-300",
     "focus:outline-none focus:ring-2 focus:ring-primary/30",
-    "overflow-hidden"
+    "overflow-hidden hover-scale"
   )
 
   const sizeStyles = {
@@ -64,8 +61,8 @@ export function Button({
         {showIcon && (
           <span className={cn(
             "w-[2.125rem] h-[2.125rem] rounded-full flex items-center justify-center flex-shrink-0",
-            "transition-colors duration-300",
-            "group-hover:bg-primary-hover",
+            "transition-all duration-300",
+            "group-hover:bg-primary-hover group-hover:scale-110",
             iconStyles[variant]
           )}>
             <ArrowUpRight size={16} strokeWidth={2} />
@@ -79,6 +76,7 @@ export function Button({
     baseStyles,
     sizeStyles[size],
     variantStyles[variant],
+    "active:scale-[0.97]",
     className
   )
 
