@@ -1,0 +1,8 @@
+export { HeroSection } from "./hero"
+export { AboutPreviewSection } from "./about-preview"
+export { YogaProgramsSection } from "./yoga-programs"
+export { TreatmentsPreviewSection } from "./treatments-preview"
+export { CorporateWellnessSection } from "./corporate-wellness"
+export { CertificationsSection } from "./certifications"
+export { TestimonialsSection } from "./testimonials"
+export { CTASection } from "./cta"
