@@ -13,7 +13,7 @@ const navigationLinks = [
 ]
 
 const resourceLinks = [
-  { label: "Testimonials", href: "/testimonials" },
+  { label: "Testimonials", href: "/about/testimonials" },
   { label: "FAQs", href: "/resources/faqs" },
   { label: "Blog", href: "/resources/blog" },
   { label: "Events", href: "/resources/events" },

@@ -1,54 +1,32 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowUpRight, Award } from "lucide-react"
+import { ArrowUpRight, Award, GraduationCap, HeartPulse, Leaf, Brain, Apple, Sparkles } from "lucide-react"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
-import { useScrollReveal, fadeUp, staggerContainer, scaleIn } from "@/hooks/use-scroll-reveal"
+import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
 
-const doctors = [
-  {
-    name: "Dr. Arjun Mehta",
-    specialty: "Panchakarma & Lifestyle Medicine",
-    bio: "A BAMS graduate with over a decade of experience, Dr. Mehta specializes in detoxification therapies and personalized wellness plans rooted in classical Ayurveda.",
-    credentials: ["BAMS, MD (Ayurveda)", "10+ years clinical practice", "Certified Panchakarma Specialist"],
-    gradient: "from-emerald-200/60 to-teal-200/60",
-  },
-  {
-    name: "Dr. Priya Sharma",
-    specialty: "Women's Health & Rasayana",
-    bio: "Dr. Sharma focuses on women's health, reproductive wellness, and rejuvenation therapies (Rasayana) using a blend of herbs, diet, and lifestyle guidance.",
-    credentials: ["BAMS", "Specialist in Stri Roga", "Ayurvedic Nutrition Expert"],
-    gradient: "from-rose-200/60 to-pink-200/60",
-  },
-  {
-    name: "Dr. Vikram Nair",
-    specialty: "Ayurvedic Orthopedics & Pain Management",
-    bio: "Dr. Nair combines traditional Ayurvedic treatments with modern diagnostic methods to address chronic pain, joint disorders, and musculoskeletal conditions.",
-    credentials: ["BAMS, MS (Ortho Ayurveda)", "Marma Therapy Specialist", "15+ years experience"],
-    gradient: "from-blue-200/60 to-cyan-200/60",
-  },
-  {
-    name: "Dr. Ananya Gupta",
-    specialty: "Digestive Health & Detox",
-    bio: "Dr. Gupta is an expert in Agni (digestive fire) management and customized detox programs that restore balance from the inside out.",
-    credentials: ["BAMS, PhD (Ayurveda)", "Gut Health Specialist", "Published Researcher"],
-    gradient: "from-amber-200/60 to-yellow-200/60",
-  },
+const qualifications = [
+  "Bachelor of Ayurvedic Medicine and Surgery (BAMS)",
+  "Master of Science in Yoga (MSc Yoga)",
+  "Ayurvedic Dietetics",
 ]
 
-const credentialsList = [
-  "BAMS — Bachelor of Ayurvedic Medicine & Surgery",
-  "MD (Ayurveda) — Postgraduate specialization",
-  "Certified Panchakarma Therapists",
-  "Registered with Central Council of Indian Medicine (CCIM)",
-  "Ongoing continuing education in integrative medicine",
+const expertise = [
+  { label: "Ayurvedic Consultation", icon: Leaf },
+  { label: "Yoga Therapy & Meditation", icon: Brain },
+  { label: "Lifestyle Disorder Management", icon: HeartPulse },
+  { label: "Infertility & Gyne + Obs Disorder", icon: Sparkles },
+  { label: "Stress Management", icon: Apple },
+  { label: "Wellness Counseling", icon: HeartPulse },
+  { label: "Diet & Lifestyle Guidance", icon: Leaf },
+  { label: "Holistic Healing Practices", icon: Brain },
 ]
 
 export default function AyurvedicDoctorsPage() {
   const heroReveal = useScrollReveal()
-  const gridReveal = useScrollReveal()
-  const credReveal = useScrollReveal()
+  const contentReveal = useScrollReveal()
+  const expertiseReveal = useScrollReveal()
 
   return (
     <>
@@ -79,81 +57,84 @@ export default function AyurvedicDoctorsPage() {
       </section>
 
       <Section className="bg-cream">
-        <SectionHeader
-          title="Ayurveda at The Hope Yoga Wellness Studio"
-          subtitle="Our Doctors"
-          description=""
-        />
-        <motion.div
-          ref={gridReveal.ref}
-          variants={staggerContainer}
-          initial="hidden"
-          animate={gridReveal.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
-        >
-          {doctors.map((doctor, i) => (
-            <motion.div key={doctor.name} variants={fadeUp} custom={i * 0.1}>
-              <div className="bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-400">
-                <div
-                  className={`h-48 bg-gradient-to-br ${doctor.gradient} flex items-center justify-center`}
-                >
-                  <span className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center">
-                    <Award size={28} className="text-primary" />
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="heading-5 text-deep mb-1">{doctor.name}</h3>
-                  <span className="subtitle-text text-primary inline-block mb-3">
-                    {doctor.specialty}
-                  </span>
-                  <p className="body-regular text-text-body mb-4">{doctor.bio}</p>
-                  <ul className="space-y-1.5">
-                    {doctor.credentials.map((cred) => (
-                      <li
-                        key={cred}
-                        className="body-small text-text-body flex items-start gap-2"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0" />
-                        {cred}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </Section>
+        <div className="max-w-4xl mx-auto" ref={contentReveal.ref}>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <span className="subtitle-text inline-block mb-4">Senior Ayurvedic Consultant</span>
+              <h2 className="heading-2 text-deep">Dr. MD IMRAN WAKEEL AHMAD</h2>
+              <p className="mt-2 body-regular text-primary font-medium">BAMS, MSc Yoga, Ayurvedic Dietetics</p>
+              <p className="mt-6 body-large text-text-body leading-relaxed">
+                Dedicated Ayurvedic Consultant and Yoga Professional with a strong background in holistic wellness, preventive healthcare, Panchakarma support, therapeutic yoga, and lifestyle management.
+              </p>
+              <p className="mt-4 body-regular text-text-body leading-relaxed">
+                Skilled in integrating Ayurveda and Yoga principles for improving physical, mental, and emotional well-being. Passionate about natural healing, patient counseling, stress management, diet and lifestyle correction, and wellness-based therapies.
+              </p>
 
-      <Section className="bg-white">
-        <motion.div
-          ref={credReveal.ref}
-          variants={staggerContainer}
-          initial="hidden"
-          animate={credReveal.isVisible ? "visible" : "hidden"}
-        >
-          <SectionHeader
-            title="Credentials & Certifications"
-            subtitle="Our Standards"
-            description="Every doctor in our network meets rigorous educational and professional standards."
-          />
-          <motion.div
-            variants={scaleIn}
-            className="max-w-2xl mx-auto bg-cream rounded-xl p-8"
-          >
-            <ul className="space-y-4">
-              {credentialsList.map((cred) => (
-                <li
-                  key={cred}
-                  className="flex items-start gap-3 body-regular text-text-body"
+              <div className="mt-8">
+                <h4 className="heading-5 text-deep mb-4">Educational Qualifications</h4>
+                <ul className="space-y-3">
+                  {qualifications.map((q) => (
+                    <li key={q} className="flex items-center gap-3 body-regular text-text-body">
+                      <GraduationCap size={18} className="text-primary flex-shrink-0" />
+                      {q}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/contact/book-consultation"
+                  className="group inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
                 >
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  {cred}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
+                  Book Consultation
+                  <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-all duration-300">
+                    <ArrowUpRight size={16} strokeWidth={2} />
+                  </span>
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl p-8 shadow-soft">
+              <h4 className="heading-5 text-deep mb-6">Areas of Expertise</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {expertise.map((item) => {
+                  const Icon = item.icon
+                  return (
+                    <div key={item.label} className="flex items-center gap-3 p-3 rounded-lg bg-cream">
+                      <span className="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+                        <Icon size={18} />
+                      </span>
+                      <span className="body-regular text-text-body font-medium">{item.label}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 bg-white rounded-xl p-8 shadow-soft border border-stroke">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="heading-5 text-deep mb-4">Professional Experience</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3 body-regular text-text-body">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    Experience in Ayurvedic consultation and wellness guidance
+                  </li>
+                  <li className="flex items-start gap-3 body-regular text-text-body">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    Experience in Yoga therapy sessions and holistic health management
+                  </li>
+                  <li className="flex items-start gap-3 body-regular text-text-body">
+                    <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
+                    Knowledge of Ayurvedic dietetics, lifestyle counseling, and preventive healthcare
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </Section>
 
       <Section className="bg-cream">

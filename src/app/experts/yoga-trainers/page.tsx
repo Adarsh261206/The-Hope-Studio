@@ -5,6 +5,7 @@ import { ArrowUpRight, User } from "lucide-react"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
+import Image from "next/image"
 
 const trainers = [
   {
@@ -12,6 +13,13 @@ const trainers = [
     specialty: "Hatha & Vinyasa Yoga",
     bio: "Founder of The Hope Yoga Wellness Studio, Aakash brings deep traditional yoga knowledge and a passion for holistic healing to every session.",
     gradient: "from-rose-200/60 to-amber-200/60",
+  },
+  {
+    name: "Ketan",
+    specialty: "Dance, Choreography & Performance",
+    bio: "With over 25 years of experience, Ketan is a dancer, choreographer, mentor and performer who has trained hundreds of students, many now working in Bollywood.",
+    gradient: "from-purple-200/60 to-pink-200/60",
+    image: "/ketan.png",
   },
   {
     name: "James Smith",
@@ -93,13 +101,24 @@ export default function YogaTrainersPage() {
           {trainers.map((trainer, i) => (
             <motion.div key={trainer.name} variants={fadeUp} custom={i * 0.1}>
               <div className="bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-medium transition-all duration-400">
-                <div
-                  className={`h-48 bg-gradient-to-br ${trainer.gradient} flex items-center justify-center`}
-                >
-                  <span className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center">
-                    <User size={28} className="text-primary" />
-                  </span>
-                </div>
+                {trainer.image ? (
+                  <div className="h-48 relative overflow-hidden bg-gradient-to-br from-purple-200/60 to-pink-200/60">
+                    <Image
+                      src={trainer.image}
+                      alt={trainer.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className={`h-48 bg-gradient-to-br ${trainer.gradient} flex items-center justify-center`}
+                  >
+                    <span className="w-16 h-16 rounded-full bg-white/60 backdrop-blur-sm flex items-center justify-center">
+                      <User size={28} className="text-primary" />
+                    </span>
+                  </div>
+                )}
                 <div className="p-6">
                   <h3 className="heading-5 text-deep mb-1">{trainer.name}</h3>
                   <span className="subtitle-text text-primary inline-block mb-3">

@@ -4,30 +4,27 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Zap, Flame, Target, TrendingUp } from "lucide-react"
+import { ArrowUpRight, Zap, Flame, Target, Heart, Brain, Wind, Shield, Trophy } from "lucide-react"
 
-const approaches = [
-  {
-    label: "Gentle Movement",
-    description: "Slow, therapeutic stretches and postures to release physical tension held in the body from chronic stress.",
-    icon: Target,
-  },
-  {
-    label: "Breathwork Techniques",
-    description: "Specific pranayama practices that activate the parasympathetic nervous system and promote deep relaxation.",
-    icon: TrendingUp,
-  },
-  {
-    label: "Guided Relaxation",
-    description: "Progressive muscle relaxation and Yoga Nidra to calm the mind and restore mental clarity.",
-    icon: Flame,
-  },
+const benefits = [
+  { label: "Burns calories and supports healthy weight loss", icon: Flame },
+  { label: "Builds lean muscle strength and endurance", icon: Zap },
+  { label: "Improves flexibility and body balance", icon: Target },
+  { label: "Enhances cardiovascular fitness", icon: Heart },
+  { label: "Increases energy levels throughout the day", icon: Zap },
+  { label: "Improves posture and core strength", icon: Target },
+  { label: "Boosts metabolism and fat burning", icon: Flame },
+  { label: "Reduces stress while improving mental focus", icon: Brain },
+  { label: "Enhances body coordination and athletic performance", icon: Trophy },
+  { label: "Increases confidence and overall physical fitness", icon: Shield },
+  { label: "Promotes better circulation and detoxification", icon: Wind },
+  { label: "Helps develop discipline and mental resilience", icon: Brain },
 ]
 
-export default function StressManagementYogaPage() {
+export default function PowerYogaPage() {
   const heroRef = useScrollReveal()
   const contentRef = useScrollReveal()
-  const levelsRef = useScrollReveal()
+  const benefitsRef = useScrollReveal()
 
   return (
     <>
@@ -42,7 +39,7 @@ export default function StressManagementYogaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop')",
+              "url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -53,7 +50,7 @@ export default function StressManagementYogaPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="subtitle-text text-white/80 inline-block mb-4"
           >
-            Release & Restore
+            Dynamic & Energizing
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -61,7 +58,7 @@ export default function StressManagementYogaPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="heading-1 text-white"
           >
-            Stress Management Yoga
+            Power Yoga
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -69,8 +66,7 @@ export default function StressManagementYogaPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 body-large text-white/80 max-w-[30rem] mx-auto"
           >
-            A therapeutic approach to yoga that combines gentle movement, conscious breathing,
-            and relaxation techniques to release stress and restore inner calm.
+            A modern, dynamic style combining flowing sequences with strength training, flexibility, and cardiovascular exercise.
           </motion.p>
         </div>
       </motion.section>
@@ -83,49 +79,42 @@ export default function StressManagementYogaPage() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-3xl mx-auto"
         >
-          <span className="subtitle-text inline-block mb-4">Healing Through Stillness</span>
-          <h2 className="heading-2 text-deep">What Is Stress Management Yoga?</h2>
+          <span className="subtitle-text inline-block mb-4">Strength Meets Flow</span>
+          <h2 className="heading-2 text-deep">What Is Power Yoga?</h2>
           <p className="mt-6 body-large text-text-body leading-relaxed">
-            Stress Management Yoga is a therapeutic practice designed to counteract the effects of
-            chronic stress on the body and mind. Through gentle postures, conscious breathing, and
-            guided relaxation, this practice activates the parasympathetic nervous system —
-            your body&apos;s natural rest-and-digest response.
+            Power Yoga is a modern, dynamic style of yoga inspired by traditional Ashtanga Yoga. It combines flowing sequences of yoga postures with strength training, flexibility, balance, and cardiovascular exercise. Power Yoga is energetic, challenging, and designed to build endurance while improving overall fitness.
           </p>
           <p className="mt-4 body-large text-text-body leading-relaxed">
-            Classes move at a calming pace, emphasizing restorative poses and breath awareness.
-            You&apos;ll learn practical tools to manage stress both on and off the mat, leaving
-            each session feeling lighter, clearer, and more centered.
+            This style of yoga is ideal for individuals who want to lose weight, tone their bodies, increase stamina, and enjoy a more active yoga practice.
           </p>
         </motion.div>
       </Section>
 
       <Section className="bg-cream">
         <SectionHeader
-          subtitle="Our Approach"
-          title="How We Help You De-Stress"
-          description="We combine three core approaches to help you manage stress and restore balance."
+          subtitle="Benefits"
+          title="Why Practice Power Yoga?"
         />
         <motion.div
-          ref={levelsRef.ref}
+          ref={benefitsRef.ref}
           variants={staggerContainer}
           initial="hidden"
-          animate={levelsRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          animate={benefitsRef.isVisible ? "visible" : "hidden"}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {approaches.map((l, i) => {
-            const Icon = l.icon
+          {benefits.map((b, i) => {
+            const Icon = b.icon
             return (
               <motion.div
-                key={l.label}
+                key={b.label}
                 variants={fadeUp}
-                custom={i * 0.1}
-                className="bg-white rounded-xl p-6 shadow-soft"
+                custom={i * 0.03}
+                className="bg-white rounded-xl p-5 shadow-soft flex items-center gap-4"
               >
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
-                  <Icon size={22} />
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <Icon size={18} />
                 </span>
-                <h5 className="heading-5 text-deep">{l.label}</h5>
-                <p className="mt-3 body-regular text-text-body">{l.description}</p>
+                <p className="body-regular text-text-body">{b.label}</p>
               </motion.div>
             )
           })}
@@ -133,15 +122,15 @@ export default function StressManagementYogaPage() {
       </Section>
 
       <Section className="bg-white text-center">
-        <span className="subtitle-text inline-block mb-4">Find Your Calm</span>
+        <span className="subtitle-text inline-block mb-4">Best For</span>
         <h2 className="heading-2 text-deep max-w-2xl mx-auto">
-          Ready to Let Go of Stress?
+          Fitness enthusiasts, athletes, busy professionals, and anyone looking for an intense, full-body workout with the benefits of yoga.
         </h2>
         <Link
-          href="/booking"
+          href="/contact/book-consultation"
           className="mt-8 inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-sm font-sans font-semibold hover:bg-primary-hover transition-all duration-300 group"
         >
-          Book Consultation
+          Join a Session
           <ArrowUpRight size={16} strokeWidth={2} />
         </Link>
       </Section>

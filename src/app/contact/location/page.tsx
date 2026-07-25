@@ -9,29 +9,9 @@ import {
 } from "@/hooks/use-scroll-reveal"
 import { MapPin, Phone, Mail, Navigation } from "lucide-react"
 
-const attractions = [
-  {
-    name: "Sunrise Meditation Point",
-    description: "A serene hilltop offering panoramic views — just a 10-minute walk from the retreat.",
-  },
-  {
-    name: "Lotus Lake",
-    description: "A peaceful lake surrounded by walking trails, perfect for morning reflection.",
-  },
-  {
-    name: "The Zen Garden",
-    description: "A beautifully landscaped garden with traditional meditation pavilions.",
-  },
-  {
-    name: "Wellness Valley Market",
-    description: "Local organic market with fresh produce, herbs, and artisanal wellness products.",
-  },
-]
-
 export default function LocationPage() {
   const { ref: heroRef, isVisible: heroVisible } = useScrollReveal()
   const { ref: mapRef, isVisible: mapVisible } = useScrollReveal()
-  const { ref: attractionsRef, isVisible: attractionsVisible } = useScrollReveal()
   const { ref: contactRef, isVisible: contactVisible } = useScrollReveal()
 
   return (
@@ -68,8 +48,7 @@ export default function LocationPage() {
             variants={fadeUp}
             className="mt-4 body-large text-white/80 max-w-xl mx-auto"
           >
-            Nestled in the heart of Wellness Valley, surrounded by nature&apos;s
-            tranquility.
+            Visit us at our wellness studio in Diva East, Thane.
           </motion.p>
         </motion.div>
       </section>
@@ -95,7 +74,7 @@ export default function LocationPage() {
                 <MapPin size={40} className="text-primary mx-auto mb-2" />
                 <span className="heading-5 text-primary">Map</span>
                 <p className="body-regular text-primary-600 mt-1 max-w-xs mx-auto">
-                  42 Yoga Harmony Road, Riverside, CA 92501
+                  Shop No. 08, C Wing Sandeep Residency, In Front Of Siddhivinayak Hospital, near SmG School, Diva Agasan Road, Diva East, Thane - 400612
                 </p>
               </div>
             </motion.div>
@@ -105,14 +84,10 @@ export default function LocationPage() {
                 Directions
               </h5>
               <p className="body-regular text-text-body mb-3">
-                We are located 15 minutes from Downtown Riverside. Free
-                parking is available on-site for all guests.
+                We are located at Shop No. 08, C Wing Sandeep Residency, in front of Siddhivinayak Hospital, near SmG School on Diva Agasan Road.
               </p>
               <p className="body-regular text-text-body">
-                The nearest airport is Ontario International (ONT), about a
-                45-minute drive from the retreat. We offer complimentary shuttle
-                service for overnight guests — simply let us know your arrival
-                time.
+                Free parking is available on-site for all guests. The studio is easily accessible from Diva East, Thane.
               </p>
             </motion.div>
           </motion.div>
@@ -139,9 +114,13 @@ export default function LocationPage() {
                 <div>
                   <h5 className="heading-5 text-deep mb-1">Address</h5>
                   <p className="body-regular text-text-body">
-                    42 Yoga Harmony Road
+                    Shop No. 08, C Wing Sandeep Residency
                     <br />
-                    Riverside, CA 92501
+                    In Front Of Siddhivinayak Hospital, near SmG School
+                    <br />
+                    Diva Agasan Road, Diva East
+                    <br />
+                    Thane - 400612
                   </p>
                 </div>
               </motion.div>
@@ -156,7 +135,7 @@ export default function LocationPage() {
                 <div>
                   <h5 className="heading-5 text-deep mb-1">Phone</h5>
                   <p className="body-regular text-text-body">
-                    +1 (951) 782-0900
+                    +91 81691 87688
                   </p>
                 </div>
               </motion.div>
@@ -171,45 +150,13 @@ export default function LocationPage() {
                 <div>
                   <h5 className="heading-5 text-deep mb-1">Email</h5>
                   <p className="body-regular text-text-body">
-                    hello@thehopeyogawellness.com
+                    info@thehopeyogawellness.com
                   </p>
                 </div>
               </motion.div>
             </div>
           </motion.div>
         </div>
-      </Section>
-
-      <Section>
-        <motion.div
-          ref={attractionsRef}
-          initial="hidden"
-          animate={attractionsVisible ? "visible" : "hidden"}
-          variants={staggerContainer}
-        >
-          <SectionHeader
-            title="Nearby Attractions"
-            subtitle="Explore the Area"
-            description="Make the most of your visit with these nearby destinations."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {attractions.map((attraction, i) => (
-              <motion.div
-                key={attraction.name}
-                variants={fadeUp}
-                custom={i * 0.1}
-                className="p-6 bg-cream rounded-lg"
-              >
-                <h5 className="heading-5 text-deep mb-2">
-                  {attraction.name}
-                </h5>
-                <p className="body-regular text-text-body">
-                  {attraction.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </Section>
     </>
   )

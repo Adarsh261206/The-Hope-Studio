@@ -4,35 +4,25 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Heart, Music, Feather, Sparkles } from "lucide-react"
+import { ArrowUpRight, Heart, Wind, Brain, Flame, Target, Activity, Shield } from "lucide-react"
 
-const highlights = [
-  {
-    label: "Desk-Friendly Poses",
-    description: "Simple stretches and postures that can be performed at your desk, relieving tension in the neck, shoulders, and lower back.",
-    icon: Feather,
-  },
-  {
-    label: "Breath & Focus",
-    description: "Quick breathing exercises to reset the nervous system, improve concentration, and reduce workplace stress in minutes.",
-    icon: Sparkles,
-  },
-  {
-    label: "Team Well-Being",
-    description: "Group sessions that foster team bonding, boost morale, and create a culture of health and mindfulness at work.",
-    icon: Music,
-  },
-  {
-    label: "Flexible Scheduling",
-    description: "Sessions designed to fit into busy workdays — from 15-minute desk breaks to full lunch-hour classes.",
-    icon: Heart,
-  },
+const benefits = [
+  { label: "Improves flexibility and full-body mobility", icon: Activity },
+  { label: "Builds muscle strength and endurance", icon: Flame },
+  { label: "Enhances balance and coordination", icon: Target },
+  { label: "Improves cardiovascular fitness", icon: Heart },
+  { label: "Burns calories and supports healthy weight management", icon: Flame },
+  { label: "Increases energy and stamina", icon: Wind },
+  { label: "Reduces stress and anxiety", icon: Heart },
+  { label: "Improves focus, concentration, and mindfulness", icon: Brain },
+  { label: "Promotes better posture and core stability", icon: Target },
+  { label: "Enhances breathing capacity and overall well-being", icon: Shield },
 ]
 
-export default function CorporateYogaPage() {
+export default function VinyasaYogaPage() {
   const heroRef = useScrollReveal()
   const contentRef = useScrollReveal()
-  const highlightsRef = useScrollReveal()
+  const benefitsRef = useScrollReveal()
 
   return (
     <>
@@ -47,7 +37,7 @@ export default function CorporateYogaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop')",
+              "url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -58,7 +48,7 @@ export default function CorporateYogaPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="subtitle-text text-white/80 inline-block mb-4"
           >
-            Wellness at Work
+            Flow with Breath
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -66,7 +56,7 @@ export default function CorporateYogaPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="heading-1 text-white"
           >
-            Corporate Yoga
+            Vinyasa Yoga
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -74,8 +64,7 @@ export default function CorporateYogaPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 body-large text-white/80 max-w-[30rem] mx-auto"
           >
-            Bring yoga to the workplace. Our corporate programs offer accessible, chair-friendly
-            practices that reduce stress, improve focus, and enhance team well-being.
+            A dynamic and flowing style where each movement is synchronized with the breath for a smooth, meditative practice.
           </motion.p>
         </div>
       </motion.section>
@@ -88,51 +77,42 @@ export default function CorporateYogaPage() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-3xl mx-auto"
         >
-          <span className="subtitle-text inline-block mb-4">Yoga at Work</span>
-          <h2 className="heading-2 text-deep">What Is Corporate Yoga?</h2>
+          <span className="subtitle-text inline-block mb-4">The Art of Flow</span>
+          <h2 className="heading-2 text-deep">What Is Vinyasa Yoga?</h2>
           <p className="mt-6 body-large text-text-body leading-relaxed">
-            Corporate Yoga brings the benefits of yoga directly into the workplace. Our programs
-            are designed with office professionals in mind — focusing on desk-friendly stretches,
-            breath techniques to manage stress, and mindfulness practices that can be integrated
-            into a busy workday.
+            Vinyasa Yoga is a dynamic and flowing style of yoga where each movement is synchronized with the breath. Often called Flow Yoga, Vinyasa creates a smooth transition from one posture to the next, improving strength, flexibility, balance, and mindfulness. Every class may have a different sequence, making the practice engaging and energizing.
           </p>
           <p className="mt-4 body-large text-text-body leading-relaxed">
-            From seated poses that relieve desk tension to group breathing exercises that reset
-            team energy, each session is tailored to your organization's needs. No special
-            equipment or prior experience required — just a willingness to pause and reconnect.
+            Vinyasa Yoga helps develop a strong connection between the body and mind while providing both physical fitness and mental relaxation.
           </p>
         </motion.div>
       </Section>
 
       <Section className="bg-cream">
         <SectionHeader
-          subtitle="What We Offer"
-          title="Program Highlights"
-          description="Our corporate yoga programs are thoughtfully designed to fit your workplace culture."
+          subtitle="Benefits"
+          title="Why Practice Vinyasa Yoga?"
         />
         <motion.div
-          ref={highlightsRef.ref}
+          ref={benefitsRef.ref}
           variants={staggerContainer}
           initial="hidden"
-          animate={highlightsRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          animate={benefitsRef.isVisible ? "visible" : "hidden"}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
-          {highlights.map((h, i) => {
-            const Icon = h.icon
+          {benefits.map((b, i) => {
+            const Icon = b.icon
             return (
               <motion.div
-                key={h.label}
+                key={b.label}
                 variants={fadeUp}
-                custom={i * 0.1}
-                className="bg-white rounded-xl p-6 shadow-soft flex items-start gap-4"
+                custom={i * 0.03}
+                className="bg-white rounded-xl p-5 shadow-soft flex items-center gap-4"
               >
-                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary/10 text-primary flex-shrink-0 mt-1">
-                  <Icon size={20} />
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <Icon size={18} />
                 </span>
-                <div>
-                  <h5 className="heading-5 text-deep">{h.label}</h5>
-                  <p className="mt-2 body-regular text-text-body">{h.description}</p>
-                </div>
+                <p className="body-regular text-text-body">{b.label}</p>
               </motion.div>
             )
           })}
@@ -140,15 +120,15 @@ export default function CorporateYogaPage() {
       </Section>
 
       <Section className="bg-white text-center">
-        <span className="subtitle-text inline-block mb-4">Bring Yoga to Your Workplace</span>
+        <span className="subtitle-text inline-block mb-4">Best For</span>
         <h2 className="heading-2 text-deep max-w-2xl mx-auto">
-          Invest in Your Team's Well-Being
+          Beginners with basic fitness, intermediate practitioners, working professionals, athletes, and anyone who enjoys an active, flowing style of yoga.
         </h2>
         <Link
-          href="/booking"
+          href="/contact/book-consultation"
           className="mt-8 inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-sm font-sans font-semibold hover:bg-primary-hover transition-all duration-300 group"
         >
-          Book Consultation
+          Join a Session
           <ArrowUpRight size={16} strokeWidth={2} />
         </Link>
       </Section>

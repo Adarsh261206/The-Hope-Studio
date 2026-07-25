@@ -16,17 +16,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    content: "42 Yoga Harmony Road, Riverside, CA 92501",
+    content: "Shop No. 08, C Wing Sandeep Residency, Diva Agasan Road, Diva East, Thane - 400612",
   },
   {
     icon: Phone,
     title: "Phone",
-    content: "+1 (951) 782-0900",
+    content: "+91 81691 87688",
   },
   {
     icon: Mail,
     title: "Email",
-    content: "hello@thehopeyogawellness.com",
+    content: "info@thehopeyogawellness.com",
   },
   {
     icon: Clock,
@@ -142,7 +142,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-5 py-3.5 bg-white rounded-lg border border-stroke/60 text-deep body-regular focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-300 placeholder:text-text-body/50"
-                    placeholder="Your name"
+                    placeholder="Your Name"
                   />
                 </motion.div>
                 <motion.div variants={fadeUp}>
@@ -169,7 +169,7 @@ export default function ContactPage() {
                     value={form.phone}
                     onChange={handleChange}
                     className="w-full px-5 py-3.5 bg-white rounded-lg border border-stroke/60 text-deep body-regular focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-300 placeholder:text-text-body/50"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 98765 43210"
                   />
                 </motion.div>
                 <motion.div variants={fadeUp}>
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     required
                     rows={5}
                     className="w-full px-5 py-3.5 bg-white rounded-lg border border-stroke/60 text-deep body-regular focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-300 placeholder:text-text-body/50 resize-none"
-                    placeholder="Tell us how we can help..."
+                    placeholder="How can we help you?"
                   />
                 </motion.div>
                 <motion.div variants={fadeUp}>

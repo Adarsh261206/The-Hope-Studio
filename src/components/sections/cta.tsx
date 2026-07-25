@@ -9,17 +9,17 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Visit Us",
-    value: "The Hope Yoga Wellness Studio, Guwahati, Assam",
+    value: "Shop No. 08, Sandeep Residency, Diva East, Thane - 400612",
   },
   {
     icon: Phone,
     label: "Call Us",
-    value: "+91 98765 43210",
+    value: "+91 81691 87688",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "hello@thehopeyoga.com",
+    value: "info@thehopeyogawellness.com",
   },
   {
     icon: Clock,
@@ -30,36 +30,21 @@ const contactDetails = [
 
 export function CTASection() {
   return (
-    <Section className="bg-deep text-white overflow-hidden relative" id="cta">
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.04 }}
-        transition={{ duration: 1.5 }}
-        className="absolute inset-0"
-      >
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070&auto=format&fit=crop')",
-          }}
-        />
-      </motion.div>
-
-      <div className="relative z-[2] grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <Section className="bg-cream text-deep overflow-hidden relative" id="cta">
+      <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <span className="subtitle-text inline-block mb-4 text-white/50">
+          <span className="subtitle-text inline-block mb-4 text-primary">
             Begin Your Journey
           </span>
-          <h2 className="heading-2 text-white">
+          <h2 className="heading-2 text-deep">
             Take the First Step Toward a Healthier, Happier You
           </h2>
-          <p className="mt-5 body-large text-white/70 leading-relaxed">
+          <p className="mt-5 body-large text-text-body leading-relaxed">
             Ready to transform your life? Book a consultation with Aakash Bora and discover a personalized wellness plan that integrates Yoga, Naturopathy, and Holistic Healing tailored to your unique needs.
           </p>
 
@@ -68,10 +53,10 @@ export function CTASection() {
               href={whatsappUrl(WHATSAPP_MESSAGES.consultation)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-5 py-2 bg-white text-primary rounded-full text-base font-sans font-medium hover:bg-white/90 transition-all duration-300 hover-scale"
+              className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
             >
               Book Your Consultation
-              <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-primary text-white flex items-center justify-center transition-all duration-300 group-hover:bg-primary-hover group-hover:rotate-12">
+              <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center transition-all duration-300 group-hover:bg-white/90 group-hover:rotate-12">
                 <ArrowUpRight size={16} strokeWidth={2} />
               </span>
             </a>
@@ -79,7 +64,7 @@ export function CTASection() {
               href={whatsappUrl(WHATSAPP_MESSAGES.enquiry)}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-5 py-2 border border-white/20 text-white/80 rounded-full text-base font-sans font-medium hover:bg-white/10 hover:text-white transition-all duration-300 hover-scale"
+              className="group inline-flex items-center gap-2 px-5 py-2 border border-primary/30 text-primary rounded-full text-base font-sans font-medium hover:bg-primary hover:text-white transition-all duration-300"
             >
               <MessageCircle size={16} />
               WhatsApp Us
@@ -99,17 +84,17 @@ export function CTASection() {
             return (
               <div
                 key={detail.label}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 transition-all duration-300 hover:bg-white/10 hover:-translate-y-0.5"
+                className="bg-white border border-stroke/60 rounded-xl p-5 transition-all duration-300 hover:shadow-soft hover:-translate-y-0.5"
               >
                 <div className="flex items-start gap-3">
-                  <span className="w-9 h-9 rounded-lg bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span className="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon size={16} strokeWidth={1.5} />
                   </span>
                   <div>
-                    <p className="text-xs font-sans font-medium text-white/50 uppercase tracking-wider">
+                    <p className="text-xs font-sans font-medium text-text-body uppercase tracking-wider">
                       {detail.label}
                     </p>
-                    <p className="text-sm font-sans text-white/90 mt-1">
+                    <p className="text-sm font-sans text-deep mt-1">
                       {detail.value}
                     </p>
                   </div>

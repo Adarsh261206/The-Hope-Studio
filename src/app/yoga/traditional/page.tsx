@@ -4,27 +4,27 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Heart, Sun, Wind, Leaf } from "lucide-react"
+import { ArrowUpRight, Heart, Wind, Brain, Flame, Moon, Activity, Shield } from "lucide-react"
 
 const benefits = [
-  { label: "Reduced Stress & Anxiety", icon: Wind },
-  { label: "Improved Lung Capacity", icon: Sun },
-  { label: "Emotional Balance", icon: Heart },
-  { label: "Enhanced Focus & Clarity", icon: Leaf },
+  { label: "Improves flexibility, balance, and posture", icon: Activity },
+  { label: "Increases strength and joint mobility", icon: Flame },
+  { label: "Reduces stress, anxiety, and depression", icon: Heart },
+  { label: "Enhances concentration and mental clarity", icon: Brain },
+  { label: "Improves breathing capacity and lung function", icon: Wind },
+  { label: "Supports heart health and healthy blood circulation", icon: Activity },
+  { label: "Boosts immunity and overall vitality", icon: Shield },
+  { label: "Improves digestion and metabolism", icon: Flame },
+  { label: "Promotes better sleep and relaxation", icon: Moon },
+  { label: "Encourages emotional stability and inner peace", icon: Heart },
+  { label: "Helps manage lifestyle disorders", icon: Brain },
+  { label: "Supports spiritual growth and mindfulness", icon: Wind },
 ]
 
-const practices = [
-  { name: "Diaphragmatic Breathing", time: "Foundation", benefit: "Activates relaxation response" },
-  { name: "Nadi Shodhana (Alternate Nostril)", time: "Balancing", benefit: "Harmonizes left & right brain" },
-  { name: "Kapalabhati (Skull Shining)", time: "Energizing", benefit: "Cleanses & invigorates" },
-  { name: "Ujjayi (Ocean Breath)", time: "Calming", benefit: "Slows heart rate & soothes nerves" },
-]
-
-export default function BreathingPracticesPage() {
+export default function TraditionalYogaPage() {
   const heroRef = useScrollReveal()
   const contentRef = useScrollReveal()
   const benefitsRef = useScrollReveal()
-  const practicesRef = useScrollReveal()
 
   return (
     <>
@@ -39,7 +39,7 @@ export default function BreathingPracticesPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop')",
+              "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -50,7 +50,7 @@ export default function BreathingPracticesPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="subtitle-text text-white/80 inline-block mb-4"
           >
-            Breath as Foundation
+            Ancient Wisdom for Modern Wellness
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ export default function BreathingPracticesPage() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="heading-1 text-white"
           >
-            Breathing Practices
+            Traditional Yoga
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -66,8 +66,7 @@ export default function BreathingPracticesPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 body-large text-white/80 max-w-[30rem] mx-auto"
           >
-            Discover the transformative power of the breath. Pranayama — the practice of breath
-            control — calms the mind, energizes the body, and opens the door to deeper awareness.
+            An ancient practice that creates harmony between body, mind, and soul through mindful movement, breath, and meditation.
           </motion.p>
         </div>
       </motion.section>
@@ -80,33 +79,28 @@ export default function BreathingPracticesPage() {
           transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="max-w-3xl mx-auto"
         >
-          <span className="subtitle-text inline-block mb-4">The Power of Breath</span>
-          <h2 className="heading-2 text-deep">What Are Breathing Practices?</h2>
+          <span className="subtitle-text inline-block mb-4">The Path of Harmony</span>
+          <h2 className="heading-2 text-deep">What Is Traditional Yoga?</h2>
           <p className="mt-6 body-large text-text-body leading-relaxed">
-            Pranayama — the yogic science of breath control — is one of the most powerful tools
-            for regulating the nervous system and calming the mind. By consciously changing the
-            rhythm, depth, and pattern of your breath, you can shift from stress to relaxation,
-            from distraction to focus.
+            Traditional Yoga is an ancient practice that originated in India over 5,000 years ago. It is a holistic approach to health that combines physical postures (Asanas), breathing techniques (Pranayama), meditation (Dhyana), relaxation, and yogic philosophy. The goal of Traditional Yoga is to create harmony between the body, mind, and soul, leading to overall physical, mental, and spiritual well-being.
           </p>
           <p className="mt-4 body-large text-text-body leading-relaxed">
-            Our breathing practice sessions teach foundational and advanced pranayama techniques
-            in a supportive, guided environment. Whether you are new to breathwork or deepening
-            an existing practice, you will leave feeling centered, clear, and refreshed.
+            Unlike fast-paced fitness workouts, Traditional Yoga emphasizes mindful movement, proper breathing, inner awareness, and long-term health. It is suitable for people of all ages and fitness levels.
           </p>
         </motion.div>
       </Section>
 
       <Section className="bg-cream">
         <SectionHeader
-          subtitle="Key Benefits"
-          title="Why Practice Breathwork?"
+          subtitle="Benefits"
+          title="Why Practice Traditional Yoga?"
         />
         <motion.div
           ref={benefitsRef.ref}
           variants={staggerContainer}
           initial="hidden"
           animate={benefitsRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {benefits.map((b, i) => {
             const Icon = b.icon
@@ -114,60 +108,31 @@ export default function BreathingPracticesPage() {
               <motion.div
                 key={b.label}
                 variants={fadeUp}
-                custom={i * 0.1}
-                className="bg-white rounded-xl p-6 text-center shadow-soft"
+                custom={i * 0.03}
+                className="bg-white rounded-xl p-5 shadow-soft flex items-center gap-4"
               >
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
-                  <Icon size={22} />
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <Icon size={18} />
                 </span>
-                <h5 className="heading-5 text-deep">{b.label}</h5>
-                <p className="mt-2 body-regular text-text-body">
-                  Cultivated through consistent, mindful practice that honors the body&apos;s
-                  natural rhythms.
-                </p>
+                <p className="body-regular text-text-body">{b.label}</p>
               </motion.div>
             )
           })}
         </motion.div>
       </Section>
 
-      <Section className="bg-white">
-        <SectionHeader
-          subtitle="Techniques"
-          title="Breathing Practices We Teach"
-          description="Learn a range of pranayama techniques guided by experienced instructors in a calm, supportive setting."
-        />
-        <motion.div
-          ref={practicesRef.ref}
-          variants={staggerContainer}
-          initial="hidden"
-          animate={practicesRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+      <Section className="bg-white text-center">
+        <span className="subtitle-text inline-block mb-4">Best For</span>
+        <h2 className="heading-2 text-deep max-w-2xl mx-auto">
+          Beginners, seniors, working professionals, students, and anyone seeking complete physical and mental wellness.
+        </h2>
+        <Link
+          href="/contact/book-consultation"
+          className="mt-8 inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-sm font-sans font-semibold hover:bg-primary-hover transition-all duration-300 group"
         >
-          {practices.map((p, i) => (
-            <motion.div
-              key={p.name}
-              variants={fadeUp}
-              custom={i * 0.1}
-              className="bg-cream rounded-xl p-6"
-            >
-              <h5 className="heading-5 text-deep">{p.name}</h5>
-              <span className="text-xs font-sans font-semibold uppercase tracking-wider bg-primary/10 text-primary px-3 py-1 rounded-full inline-block mt-2">
-                {p.time}
-              </span>
-              <p className="mt-3 body-regular text-text-body">{p.benefit}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-        <div className="mt-12 text-center">
-          <Link
-            href="/booking"
-            className="group inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-sm font-sans font-semibold hover:bg-primary-hover transition-all duration-300"
-          >
-            Book Consultation
-            <ArrowUpRight size={16} strokeWidth={2} />
-          </Link>
-        </div>
+          Join a Session
+          <ArrowUpRight size={16} strokeWidth={2} />
+        </Link>
       </Section>
     </>
   )

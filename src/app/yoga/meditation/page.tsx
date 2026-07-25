@@ -4,46 +4,31 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { Section, SectionHeader } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
-import { ArrowUpRight, Moon, Heart, Brain, Wind, Eye, Sun } from "lucide-react"
+import { ArrowUpRight, Heart, Brain, Wind, Moon, Eye, Sun, Sparkles, Shield, HeartPulse, Bird } from "lucide-react"
 
 const meditationTypes = [
-  {
-    name: "Mindfulness Meditation",
-    description: "Cultivate present-moment awareness by observing thoughts and sensations without judgment. Builds focus and emotional resilience.",
-    icon: Eye,
-  },
-  {
-    name: "Loving-Kindness (Metta)",
-    description: "A heart-centered practice that extends unconditional love and compassion to yourself and others, dissolving barriers of separation.",
-    icon: Heart,
-  },
-  {
-    name: "Breath Awareness",
-    description: "Anchor your attention on the natural rhythm of the breath. Simple yet profound, this technique calms the nervous system instantly.",
-    icon: Wind,
-  },
-  {
-    name: "Body Scan",
-    description: "A guided journey through the body, releasing held tension and deepening the mind-body connection for deep relaxation.",
-    icon: Moon,
-  },
-  {
-    name: "Mantra Meditation",
-    description: "Repeat a sacred sound or phrase to quiet mental chatter and access deeper states of consciousness and inner peace.",
-    icon: Sun,
-  },
-  {
-    name: "Visualization",
-    description: "Use guided imagery to evoke healing, manifest intentions, and train the mind for positive outcomes and clarity.",
-    icon: Brain,
-  },
+  { name: "Guided Meditation", icon: Eye },
+  { name: "Mindfulness Meditation", icon: Brain },
+  { name: "Breath Awareness Meditation", icon: Wind },
+  { name: "Mantra Meditation", icon: Sun },
+  { name: "Yoga Nidra (Deep Relaxation)", icon: Moon },
+  { name: "Chakra Meditation", icon: Sparkles },
+  { name: "Om Chanting Meditation", icon: Bird },
 ]
 
 const benefits = [
-  { label: "Reduced Stress & Anxiety", icon: Heart },
-  { label: "Improved Focus & Clarity", icon: Brain },
-  { label: "Emotional Regulation", icon: Wind },
-  { label: "Better Sleep Quality", icon: Moon },
+  { label: "Reduces stress, anxiety, and mental fatigue", icon: Heart },
+  { label: "Improves concentration, focus, and memory", icon: Brain },
+  { label: "Promotes emotional balance and inner peace", icon: HeartPulse },
+  { label: "Enhances self-awareness and mindfulness", icon: Eye },
+  { label: "Improves the quality of sleep", icon: Moon },
+  { label: "Lowers blood pressure and supports heart health", icon: HeartPulse },
+  { label: "Boosts immunity and overall wellness", icon: Shield },
+  { label: "Increases mental clarity and decision-making ability", icon: Brain },
+  { label: "Helps manage anger, fear, and negative emotions", icon: Wind },
+  { label: "Promotes relaxation and reduces muscle tension", icon: Moon },
+  { label: "Increases positivity, confidence, and emotional resilience", icon: Sun },
+  { label: "Supports spiritual growth and personal development", icon: Sparkles },
 ]
 
 export default function MeditationPage() {
@@ -92,8 +77,7 @@ export default function MeditationPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-6 body-large text-white/80 max-w-[30rem] mx-auto"
           >
-            Discover the transformative power of stillness. Guided and silent meditation
-            practices to calm the mind, open the heart, and awaken inner peace.
+            A powerful mind-body practice that trains the mind to develop greater awareness, focus, and inner calm.
           </motion.p>
         </div>
       </motion.section>
@@ -107,17 +91,12 @@ export default function MeditationPage() {
           className="max-w-3xl mx-auto"
         >
           <span className="subtitle-text inline-block mb-4">The Art of Stillness</span>
-          <h2 className="heading-2 text-deep">Guided Meditation at The Hope Yoga Wellness Studio</h2>
+          <h2 className="heading-2 text-deep">What Is Meditation?</h2>
           <p className="mt-6 body-large text-text-body leading-relaxed">
-            Our guided meditation sessions provide a supportive entry point for both beginners
-            and experienced practitioners. In a tranquil setting, our instructors lead you
-            through techniques that quiet mental chatter, release physical tension, and open
-            the door to deeper self-awareness.
+            Meditation is a powerful mind-body practice that involves training the mind to develop greater awareness, focus, and inner calm. Rooted in ancient yogic traditions, meditation helps reduce mental distractions, improve emotional balance, and create a deep sense of peace. Through regular practice, meditation enhances overall well-being by harmonizing the body, mind, and spirit.
           </p>
           <p className="mt-4 body-large text-text-body leading-relaxed">
-            Each session is designed to meet you where you are — whether you seek stress relief,
-            emotional balance, or a gateway to expanded consciousness. No experience is
-            necessary; only a willingness to sit quietly and turn inward.
+            Whether you are a beginner or an experienced practitioner, meditation can become a valuable part of a healthy lifestyle.
           </p>
         </motion.div>
       </Section>
@@ -133,7 +112,7 @@ export default function MeditationPage() {
           variants={staggerContainer}
           initial="hidden"
           animate={typesRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {meditationTypes.map((m, i) => {
             const Icon = m.icon
@@ -142,13 +121,12 @@ export default function MeditationPage() {
                 key={m.name}
                 variants={fadeUp}
                 custom={i * 0.05}
-                className="bg-white rounded-xl p-6 shadow-soft"
+                className="bg-white rounded-xl p-6 shadow-soft text-center"
               >
-                <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-primary/10 text-primary mb-4">
-                  <Icon size={20} />
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                  <Icon size={22} />
                 </span>
                 <h5 className="heading-5 text-deep">{m.name}</h5>
-                <p className="mt-2 body-regular text-text-body">{m.description}</p>
               </motion.div>
             )
           })}
@@ -166,7 +144,7 @@ export default function MeditationPage() {
           variants={staggerContainer}
           initial="hidden"
           animate={benefitsRef.isVisible ? "visible" : "hidden"}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
         >
           {benefits.map((b, i) => {
             const Icon = b.icon
@@ -174,16 +152,13 @@ export default function MeditationPage() {
               <motion.div
                 key={b.label}
                 variants={fadeUp}
-                custom={i * 0.1}
-                className="text-center"
+                custom={i * 0.03}
+                className="bg-cream rounded-xl p-5 flex items-center gap-4"
               >
-                <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4">
-                  <Icon size={24} />
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <Icon size={18} />
                 </span>
-                <h5 className="heading-5 text-deep">{b.label}</h5>
-                <p className="mt-2 body-regular text-text-body">
-                  Supported by research and experienced firsthand by practitioners worldwide.
-                </p>
+                <p className="body-regular text-text-body">{b.label}</p>
               </motion.div>
             )
           })}
@@ -191,19 +166,18 @@ export default function MeditationPage() {
       </Section>
 
       <Section className="bg-cream text-center">
-        <span className="subtitle-text inline-block mb-4">Find Inner Peace</span>
+        <span className="subtitle-text inline-block mb-4">Best For</span>
         <h2 className="heading-2 text-deep max-w-2xl mx-auto">
-          Take a Moment to Simply Be
+          Students, working professionals, senior citizens, homemakers, athletes, and anyone seeking mental peace, stress relief, emotional balance, and a healthier lifestyle.
         </h2>
         <p className="mt-4 body-large text-text-body max-w-[25rem] mx-auto">
-          Join us for a guided meditation session and experience the profound rest that comes
-          from true stillness.
+          Join us for a guided meditation session and experience the profound rest that comes from true stillness.
         </p>
         <Link
-          href="/booking"
+          href="/contact/book-consultation"
           className="mt-8 inline-flex items-center gap-2 px-6 py-3.5 bg-primary text-white rounded-full text-sm font-sans font-semibold hover:bg-primary-hover transition-all duration-300 group"
         >
-          Book Consultation
+          Book a Session
           <ArrowUpRight size={16} strokeWidth={2} />
         </Link>
       </Section>

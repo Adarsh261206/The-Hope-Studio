@@ -24,8 +24,9 @@ export const navigationItems: NavItem[] = [
     label: "Yoga",
     href: "/yoga",
     dropdown: [
-      { label: "Meditation Yoga", href: "/yoga/meditation" },
+      { label: "Traditional Yoga", href: "/yoga/traditional" },
       { label: "Power Yoga", href: "/yoga/power" },
+      { label: "Meditation Yoga", href: "/yoga/meditation" },
       { label: "Ashtanga Yoga", href: "/yoga/ashtanga" },
       { label: "Vinyasa Yoga", href: "/yoga/vinyasa" },
       { label: "Corporate Yoga Programs", href: "/corporate-wellness" },
@@ -37,7 +38,7 @@ export const navigationItems: NavItem[] = [
     dropdown: [
       { label: "Treatments", href: "/treatments" },
       { label: "Doctors & Teachers", href: "/experts" },
-      { label: "Testimonials", href: "/testimonials" },
+      { label: "Testimonials", href: "/about/testimonials" },
     ],
   },
   {

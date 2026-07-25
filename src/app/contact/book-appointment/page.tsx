@@ -41,11 +41,12 @@ const services = [
 ]
 
 const timeSlots = [
-  { day: "Mon, Jun 15", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
-  { day: "Tue, Jun 16", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
-  { day: "Wed, Jun 17", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
-  { day: "Thu, Jun 18", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
-  { day: "Fri, Jun 19", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Monday", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Tuesday", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Wednesday", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Thursday", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Friday", slots: ["6:00 AM", "8:00 AM", "10:00 AM", "4:00 PM"] },
+  { day: "Saturday", slots: ["6:00 AM", "8:00 AM", "10:00 AM"] },
 ]
 
 const steps = ["Service", "Date & Time", "Details", "Confirm"]
@@ -368,7 +369,7 @@ export default function BookAppointmentPage() {
                         }
                         required
                         className="w-full px-5 py-3.5 bg-white rounded-lg border border-stroke/60 text-deep body-regular focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-300 placeholder:text-text-body/50"
-                        placeholder="Your name"
+                        placeholder="Your Name"
                       />
                     </div>
                     <div>
@@ -397,7 +398,7 @@ export default function BookAppointmentPage() {
                           setDetails({ ...details, phone: e.target.value })
                         }
                         className="w-full px-5 py-3.5 bg-white rounded-lg border border-stroke/60 text-deep body-regular focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-300 placeholder:text-text-body/50"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+91 98765 43210"
                       />
                     </div>
                   </div>

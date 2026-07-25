@@ -125,14 +125,14 @@ export default function BookConsultationPage() {
                       <label className="block text-sm font-sans font-medium text-deep mb-2">Full Name *</label>
                       <div className="relative">
                         <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-body" />
-                        <input id="consult-name" type="text" required className="w-full pl-10 pr-4 py-3 border border-stroke rounded-lg text-sm font-sans text-deep focus:outline-none focus:border-primary transition-colors" placeholder="Your name" />
+                        <input id="consult-name" type="text" required className="w-full pl-10 pr-4 py-3 border border-stroke rounded-lg text-sm font-sans text-deep focus:outline-none focus:border-primary transition-colors" placeholder="Your Name" />
                       </div>
                     </div>
                     <div>
                       <label className="block text-sm font-sans font-medium text-deep mb-2">Phone Number *</label>
                       <div className="relative">
                         <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-text-body" />
-                        <input id="consult-phone" type="tel" required className="w-full pl-10 pr-4 py-3 border border-stroke rounded-lg text-sm font-sans text-deep focus:outline-none focus:border-primary transition-colors" placeholder="+91 98765 43210" />
+                        <input id="consult-phone" type="tel" required className="w-full pl-10 pr-4 py-3 border border-stroke rounded-lg text-sm font-sans text-deep focus:outline-none focus:border-primary transition-colors" placeholder="+91 81691 87688" />
                       </div>
                     </div>
                     <div className="md:col-span-2">
