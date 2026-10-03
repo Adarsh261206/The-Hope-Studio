@@ -1,20 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Section, SectionHeader } from "@/components/ui/section"
+import { Section } from "@/components/ui/section"
 import { useScrollReveal, fadeUp, staggerContainer } from "@/hooks/use-scroll-reveal"
 import { Award, Users, Heart, Quote } from "lucide-react"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
-
-const milestones = [
-  { year: "2014", event: "Began personal yoga and wellness journey" },
-  { year: "2016", event: "Started teaching yoga to small community groups" },
-  { year: "2018", event: "Expanded into Naturopathy and Therapeutic treatments" },
-  { year: "2020", event: "Launched online wellness programs reaching 1000+ individuals" },
-  { year: "2023", event: "Surpassed 8,500 lives impacted through holistic wellness" },
-  { year: "2025", event: "Founded The Hope Yoga Wellness Studio" },
-]
 
 export default function FounderPage() {
   const { ref, isVisible } = useScrollReveal()
@@ -26,7 +17,7 @@ export default function FounderPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop')",
+              "url('/images/people/founder.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />
@@ -38,8 +29,9 @@ export default function FounderPage() {
         >
           <span className="subtitle-text text-white/80 inline-block mb-4">About Us</span>
           <h1 className="heading-1 text-white">Our Founder</h1>
-          <p className="mt-4 body-large text-white/80 max-w-xl mx-auto">
-            Meet Aakash Bora — the visionary behind The Hope Yoga Wellness Studio
+          <p className="mt-4 body-large text-white/80 max-w-2xl mx-auto">
+            Akash Bora — Yoga &amp; Wellness Professional · Naturopathist · Yoga Trainer ·
+            Health &amp; Wellness Coach
           </p>
         </motion.div>
       </section>
@@ -52,24 +44,40 @@ export default function FounderPage() {
                 className="w-full h-full bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop')",
+                    "url('/images/people/founder.jpg')",
                 }}
               />
             </div>
             <div className="absolute -bottom-4 -right-4 bg-primary text-white rounded-xl p-6 shadow-soft-lg max-w-[12rem]">
-              <span className="text-3xl font-serif font-medium">11+</span>
+              <span className="text-3xl font-serif font-medium">16+</span>
               <p className="text-xs font-sans text-white/80 mt-1">Years of Experience</p>
             </div>
           </div>
 
           <div>
-            <span className="subtitle-text inline-block mb-4">Founder & Lead Practitioner</span>
-            <h2 className="heading-2 text-deep">Aakash Bora</h2>
+            <span className="subtitle-text inline-block mb-4">Founder &amp; Lead Practitioner</span>
+            <h2 className="heading-2 text-deep">About Akash Bora</h2>
             <p className="mt-4 body-large text-text-body leading-relaxed">
-              Aakash Bora is the founder of The Hope Yoga Wellness Studio, bringing over 11 years of dedicated experience in Yoga, Naturopathy, and Holistic Wellness. With a deep passion for transforming lives, Aakash has personally impacted over 8,500 individuals through his unique approach that integrates ancient yogic wisdom with modern therapeutic practices.
+              Akash Bora is a dedicated Yoga &amp; Wellness Professional, Naturopathist and Yoga
+              Trainer with 16+ years of experience in the field of Yoga, holistic wellness,
+              nutrition and healthy living.
             </p>
             <p className="mt-4 body-regular text-text-body leading-relaxed">
-              His journey began with a personal quest for health and inner peace, which evolved into a lifelong mission to help others achieve the same. Certified across multiple wellness disciplines — including Hatha Yoga, Meditation, Naturopathy, Therapeutic Massage, Sound Therapy, and Ayurvedic practices — Aakash brings comprehensive expertise to every consultation.
+              Over the years, Akash has guided and trained 10,000+ people, helping them
+              incorporate Yoga, movement, mindful living and healthier lifestyle practices into
+              their daily lives.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              His journey in Yoga began with a simple belief — true health is not only about
+              being physically fit, but about creating balance between the body, mind and
+              lifestyle.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              With extensive experience in teaching different styles of Yoga, Akash focuses on
+              making Yoga practical, accessible and meaningful for people from different age
+              groups and backgrounds. His experience also includes working with corporate
+              organizations, schools, colleges, hospitals and government-sector groups, bringing
+              wellness practices into different environments.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
@@ -78,7 +86,7 @@ export default function FounderPage() {
                 className="group inline-flex items-center gap-2 px-5 py-2 bg-primary text-white rounded-full text-base font-sans font-medium hover:bg-primary-hover transition-all duration-300"
               >
                 Book a Consultation
-                <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-all duration-300">
+                <span className="w-[2.125rem] h-[2.125rem] rounded-full bg-white text-primary flex items-center justify-center group-hover:bg-white/90 transition-colors duration-300">
                   <ArrowUpRight size={16} strokeWidth={2} />
                 </span>
               </Link>
@@ -97,17 +105,17 @@ export default function FounderPage() {
             {
               icon: Award,
               title: "Certified Expertise",
-              desc: "Multiple certifications in Yoga, Naturopathy, Sound Therapy, Ayurveda, and Corporate Wellness.",
+              desc: "Professional learning across Naturopathy, Diet & Nutrition, multiple Yoga courses, Train-the-Trainer programs, Leadership & Management and Spiritual Wellness workshops.",
             },
             {
               icon: Users,
-              title: "8500+ Lives Impacted",
-              desc: "Proven track record of transforming lives through personalized holistic wellness programs.",
+              title: "10,000+ People Guided",
+              desc: "Trained people across yoga classes, corporate organizations, schools, colleges, hospitals and government-sector groups over 16+ years.",
             },
             {
               icon: Heart,
               title: "Holistic Approach",
-              desc: "Integrating mind, body, and soul for complete and lasting wellness transformation.",
+              desc: "Yoga, meditation, nutrition and lifestyle guidance combined with naturopathy — wellness tailored to every individual, never one-size-fits-all.",
             },
           ].map((item, i) => {
             const Icon = item.icon
@@ -127,24 +135,77 @@ export default function FounderPage() {
             )
           })}
         </motion.div>
+      </Section>
 
-        <div className="mt-20 border-t border-stroke pt-12" ref={ref}>
-          <SectionHeader
-            title="Journey Milestones"
-            subtitle="Timeline"
-            align="left"
-          />
-          <div className="mt-8 space-y-4">
-            {milestones.map((m, i) => (
-              <div key={m.year} className="flex items-start gap-4">
-                <span className="text-sm font-sans font-bold text-primary w-16 flex-shrink-0 pt-0.5">
-                  {m.year}
-                </span>
-                <div className="flex-1 pb-4 border-b border-stroke">
-                  <p className="body-regular text-text-body">{m.event}</p>
-                </div>
-              </div>
-            ))}
+      <Section className="bg-white">
+        <div className="max-w-3xl mx-auto space-y-14">
+          <div>
+            <span className="subtitle-text inline-block mb-3">Approach</span>
+            <h3 className="heading-3 text-deep">A Holistic Approach to Wellness</h3>
+            <p className="mt-4 body-large text-text-body leading-relaxed">
+              Akash&rsquo;s approach combines Yoga, meditation, nutrition and lifestyle guidance
+              with principles of naturopathy and holistic wellness.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              His professional learning includes Naturopathy, Diet &amp; Nutrition, multiple Yoga
+              courses, Train-the-Trainer programs, Leadership &amp; Management and Spiritual
+              Wellness workshops.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              He believes that every person has different needs, and therefore wellness should
+              not be treated as a one-size-fits-all approach.
+            </p>
+          </div>
+
+          <div>
+            <span className="subtitle-text inline-block mb-3">Beyond Practice</span>
+            <h3 className="heading-3 text-deep">Beyond the Yoga Mat</h3>
+            <p className="mt-4 body-large text-text-body leading-relaxed">
+              For Akash, teaching Yoga is more than conducting a class. It is about understanding
+              people, building trust and helping them develop sustainable habits.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              Over the years, he has developed strong skills in communication, leadership,
+              customer relationship building, creative work, sales and marketing, alongside his
+              wellness expertise.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              This combination of wellness knowledge and people skills has helped him build
+              long-term relationships with students and create a supportive learning environment.
+            </p>
+          </div>
+
+          <div>
+            <span className="subtitle-text inline-block mb-3">The Studio</span>
+            <h3 className="heading-3 text-deep">Founder – The Hope Yoga Wellness Studio</h3>
+            <p className="mt-4 body-large text-text-body leading-relaxed">
+              Akash Bora is the founder of The Hope Yoga Wellness Studio, created with a vision
+              to bring Yoga, wellness and holistic lifestyle practices under one roof.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              His vision is to create a space where people can learn, transform and make health a
+              permanent part of their lifestyle.
+            </p>
+          </div>
+
+          <div>
+            <span className="subtitle-text inline-block mb-3">Philosophy</span>
+            <h3 className="heading-3 text-deep">His Philosophy</h3>
+            <figure className="mt-6 bg-cream rounded-xl p-8 border-l-4 border-primary shadow-soft">
+              <Quote size={24} className="text-primary mb-4" />
+              <blockquote className="heading-4 italic text-deep leading-snug">
+                &ldquo;Yoga is not just an exercise. It is a way of understanding yourself,
+                improving your lifestyle and creating balance in everyday life.&rdquo;
+              </blockquote>
+            </figure>
+            <p className="mt-6 body-large text-text-body leading-relaxed">
+              With 16+ years of experience and 10,000+ people guided, Akash Bora continues his
+              mission of spreading awareness about Yoga, wellness and conscious living.
+            </p>
+            <p className="mt-4 body-regular text-text-body leading-relaxed">
+              His journey is not simply about teaching Yoga — it is about helping people take one
+              step closer to a healthier, happier and more balanced life.
+            </p>
           </div>
         </div>
       </Section>

@@ -8,27 +8,24 @@ import { ArrowUpRight } from "lucide-react"
 
 const experts = [
   {
-    name: "Sophia Lee",
-    role: "Yin Yoga",
-    credentials: "200hr YTT, Reiki Practitioner",
-    image:
-      "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop",
+    name: "Aakash Bora",
+    role: "Founder · Hatha & Vinyasa Yoga",
+    credentials: "11+ Years Experience, Holistic Wellness",
+    image: "/images/people/founder.jpg",
     href: "/experts/yoga-trainers",
   },
   {
-    name: "James Smith",
-    role: "Power Yoga",
-    credentials: "250hr YTT, Strength Training Expert",
-    image:
-      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?q=80&w=1974&auto=format&fit=crop",
+    name: "Ketan",
+    role: "Dance & Choreography",
+    credentials: "25+ Years, Bollywood & Performance",
+    image: "/ketan.png",
     href: "/experts/yoga-trainers",
   },
   {
-    name: "Olivia Brown",
-    role: "Iyengar Yoga",
-    credentials: "200hr YTT, Alignment Specialist",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
+    name: "The Hope Team",
+    role: "Yoga, Meditation & Therapy",
+    credentials: "Certified Instructors & Practitioners",
+    image: "/images/studio/handstand-teach.jpg",
     href: "/experts/yoga-trainers",
   },
 ]

@@ -38,7 +38,7 @@ export default function AshtangaYogaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/handstand-teach.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />

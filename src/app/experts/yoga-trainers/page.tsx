@@ -13,6 +13,7 @@ const trainers = [
     specialty: "Hatha & Vinyasa Yoga",
     bio: "Founder of The Hope Yoga Wellness Studio, Aakash brings deep traditional yoga knowledge and a passion for holistic healing to every session.",
     gradient: "from-rose-200/60 to-amber-200/60",
+    image: "/images/people/founder.jpg",
   },
   {
     name: "Ketan",
@@ -64,7 +65,7 @@ export default function YogaTrainersPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2022&auto=format&fit=crop')",
+              "url('/images/studio/savasana-green.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />

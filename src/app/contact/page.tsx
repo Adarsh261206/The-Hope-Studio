@@ -69,7 +69,7 @@ export default function ContactPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/warrior-class.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

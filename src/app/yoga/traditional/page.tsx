@@ -39,7 +39,7 @@ export default function TraditionalYogaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop')",
+              "url('/images/studio/tree-pose-class.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />

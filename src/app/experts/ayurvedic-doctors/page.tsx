@@ -35,7 +35,7 @@ export default function AyurvedicDoctorsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/ayurveda/panchakarma.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/50" />

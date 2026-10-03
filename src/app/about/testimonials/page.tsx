@@ -93,12 +93,14 @@ export default function TestimonialsPage() {
   return (
     <>
       <section className="relative h-[60vh] min-h-[28rem] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop')",
-          }}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/studio/group-celebration.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/certificates.mp4"
         />
         <div className="absolute inset-0 overlay-hero" />
         <motion.div

@@ -6,6 +6,7 @@ import {
   CorporateWellnessSection,
   CertificationsSection,
   TestimonialsSection,
+  GallerySection,
   CTASection,
 } from "@/components/sections"
 
@@ -19,6 +20,7 @@ export default function Home() {
       <CorporateWellnessSection />
       <CertificationsSection />
       <TestimonialsSection />
+      <GallerySection />
       <CTASection />
     </>
   )

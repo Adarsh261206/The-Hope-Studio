@@ -44,7 +44,7 @@ export default function OurStoryPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop')",
+              "url('/images/studio/savasana-green.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

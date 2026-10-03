@@ -63,7 +63,7 @@ export default function ProductsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1887&auto=format&fit=crop')",
+              "url('/images/products/mats-stack.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

@@ -58,7 +58,7 @@ export default function WorkshopsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop')",
+              "url('/images/events/outdoor-session.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

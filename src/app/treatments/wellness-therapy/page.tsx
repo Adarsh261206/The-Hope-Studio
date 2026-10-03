@@ -72,7 +72,7 @@ export default function WellnessTherapyPage() {
           className="absolute inset-0 bg-cover bg-center scale-110"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop')",
+              "url('/images/ayurveda/shirodhara.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero pointer-events-none z-[2]" />

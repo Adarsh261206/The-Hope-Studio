@@ -60,7 +60,7 @@ export default function HealingSessionsPage() {
           className="absolute inset-0 bg-cover bg-center scale-110"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1993&auto=format&fit=crop')",
+              "url('/images/ayurveda/joint-pain.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero pointer-events-none z-[2]" />

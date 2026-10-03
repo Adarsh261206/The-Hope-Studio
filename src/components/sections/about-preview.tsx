@@ -44,21 +44,21 @@ export function AboutPreviewSection() {
       >
         {[
           {
-            img: "https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop",
+            img: "/images/studio/lying-class-green.jpg",
             label: "Yoga",
             dotColor: "bg-primary",
             transform: "translate(2.5rem, 2rem) rotate(-12deg)",
             zIndex: 5,
           },
           {
-            img: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
+            img: "/images/studio/savasana-green.jpg",
             label: "Meditation",
             dotColor: "bg-green-600",
             transform: "none",
             zIndex: 3,
           },
           {
-            img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop",
+            img: "/images/studio/tree-pose-class.jpg",
             label: "Healing",
             dotColor: "bg-primary-hover",
             transform: "translate(-2.5rem, 2rem) rotate(12deg)",

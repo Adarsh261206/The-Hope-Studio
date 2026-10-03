@@ -107,7 +107,7 @@ export default function FAQsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/tree-pose2.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

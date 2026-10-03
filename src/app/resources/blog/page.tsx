@@ -75,7 +75,7 @@ export default function BlogPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1504711434969-e33886168d8c?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/certificates.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

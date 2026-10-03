@@ -21,7 +21,7 @@ const classes = [
     duration: "60 min",
     levelColor: "bg-[#bb5016]",
     image:
-      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop",
+      "/images/studio/tree-pose2.jpg",
     desc: "A gentle introduction to foundational yoga postures and breathing techniques.",
   },
   {
@@ -30,7 +30,7 @@ const classes = [
     duration: "40 min",
     levelColor: "bg-[#96672a]",
     image:
-      "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
+      "/images/studio/seated-circle.jpg",
     desc: "Guided meditation practices to calm the mind and cultivate inner peace.",
   },
   {
@@ -39,7 +39,7 @@ const classes = [
     duration: "45 min",
     levelColor: "bg-[#4f7d00]",
     image:
-      "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop",
+      "/images/studio/savasana-green.jpg",
     desc: "Therapeutic yoga sequences designed to reduce stress and restore balance.",
   },
   {
@@ -48,7 +48,7 @@ const classes = [
     duration: "Flexible",
     levelColor: "bg-[#96672a]",
     image:
-      "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1993&auto=format&fit=crop",
+      "/images/events/outdoor-session.jpg",
     desc: "Tailored wellness sessions for workplaces to boost productivity and well-being.",
   },
 ]

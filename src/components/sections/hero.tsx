@@ -6,18 +6,18 @@ import { ArrowUpRight } from "lucide-react"
 import { whatsappUrl, WHATSAPP_MESSAGES } from "@/lib/whatsapp"
 
 const sliderImages = [
-  "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1993&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1974&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop",
+  "/images/studio/warrior-class.jpg",
+  "/images/studio/savasana-green.jpg",
+  "/images/studio/tree-pose-class.jpg",
+  "/images/events/outdoor-meditation.jpg",
+  "/images/studio/handstand-teach.jpg",
+  "/images/studio/lying-class-green.jpg",
+  "/images/studio/certificates.jpg",
+  "/images/studio/lunge-class.jpg",
+  "/images/studio/lying-class-green.jpg",
+  "/images/studio/tree-pose-class.jpg",
+  "/images/studio/savasana-green.jpg",
+  "/images/studio/warrior-class.jpg",
 ]
 
 const labels = [

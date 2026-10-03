@@ -79,12 +79,14 @@ export default function EventsPage() {
   return (
     <>
       <section className="relative h-[50vh] min-h-[24rem] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop')",
-          }}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/images/events/group-outdoor.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/celebration.mp4"
         />
         <div className="absolute inset-0 overlay-hero" />
         <motion.div

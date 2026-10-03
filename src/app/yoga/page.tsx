@@ -13,7 +13,7 @@ const styles = [
     slug: "traditional",
     tagline: "Breath as foundation",
     description: "Master the art of pranayama and breath awareness to calm the nervous system, increase lung capacity, and cultivate inner peace.",
-    image: "https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/studio/lying-class-green.jpg",
     icon: Sun,
   },
   {
@@ -21,7 +21,7 @@ const styles = [
     slug: "power",
     tagline: "Release & restore",
     description: "A therapeutic practice combining gentle movement, breathwork, and relaxation techniques to reduce stress and restore balance.",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop",
+    image: "/images/studio/tree-pose-class.jpg",
     icon: Zap,
   },
   {
@@ -29,7 +29,7 @@ const styles = [
     slug: "ashtanga",
     tagline: "Balance of body & mind",
     description: "A classical approach combining postures, breath control, and meditation to harmonize body, mind, and spirit.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1999&auto=format&fit=crop",
+    image: "/images/studio/tree-pose2.jpg",
     icon: Wind,
   },
   {
@@ -37,7 +37,7 @@ const styles = [
     slug: "vinyasa",
     tagline: "Wellness at work",
     description: "Chair and desk-friendly yoga sessions designed to reduce workplace stress, improve posture, and boost team well-being.",
-    image: "https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=1974&auto=format&fit=crop",
+    image: "/images/corporate/speaking.jpg",
     icon: Heart,
   },
   {
@@ -45,7 +45,7 @@ const styles = [
     slug: "meditation",
     tagline: "Stillness within",
     description: "Guided and silent meditation practices to calm the mind, reduce stress, and deepen your connection to the present moment.",
-    image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1993&auto=format&fit=crop",
+    image: "/images/events/outdoor-seated.png",
     icon: Moon,
   },
 ]
@@ -68,7 +68,7 @@ export default function YogaPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/warrior-class.jpg')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -163,7 +163,7 @@ export default function YogaPage() {
           className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/handstand-teach.jpg')",
           }}
         />
         <div className="container-main relative z-10 py-20 md:py-28 text-center">

@@ -34,7 +34,7 @@ export default function InstitutionalPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1523050854058-8df90110c7f1?q=80&w=2070&auto=format&fit=crop')",
+              "url('/images/studio/certificates.jpg')",
           }}
         />
         <div className="absolute inset-0 overlay-hero" />

@@ -50,7 +50,7 @@ export default function MeditationPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1993&auto=format&fit=crop')",
+              "url('/images/events/outdoor-seated.png')",
           }}
         />
         <div className="absolute inset-0 bg-black/60" />
