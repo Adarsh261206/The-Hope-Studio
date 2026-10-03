@@ -48,7 +48,7 @@ export function CorporateWellnessSection() {
             We partner with organizations to create healthier, happier, and more productive workplaces. Our corporate wellness programs are customized to meet the unique needs of your team, reducing stress and improving overall well-being.
           </p>
           <p className="mt-4 body-regular text-text-body leading-relaxed">
-            With over 11 years of experience in holistic health, Aakash Bora and our expert team bring proven wellness methodologies to corporates, schools, hospitals, and institutions.
+            With over 16 years of experience in holistic health, Akash Bora and our expert team bring proven wellness methodologies to corporates, schools, hospitals, and institutions.
           </p>
 
           <div className="mt-8 flex items-center gap-4 sm:gap-6">
@@ -62,7 +62,7 @@ export function CorporateWellnessSection() {
               </span>
             </Link>
             <span className="text-xs text-text-body font-sans">
-              Serving 8500+ individuals
+              Serving 10,000+ individuals
             </span>
           </div>
         </div>

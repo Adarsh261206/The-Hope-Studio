@@ -11,7 +11,7 @@ export const navigationItems: NavItem[] = [
     href: "/about",
     megaMenu: menu(
       "About The Hope",
-      "Learn about our journey, mission, and the holistic wellness vision founded by Aakash Bora.",
+      "Learn about our journey, mission, and the holistic wellness vision founded by Akash Bora.",
       [
         { label: "Our Story", href: "/about/our-story" },
         { label: "Mission", href: "/about/mission" },

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     "Corporate Wellness",
     "Stress Management",
     "Wellness Programs",
-    "Aakash Bora",
+    "Akash Bora",
   ],
   icons: {
     icon: [
@@ -93,7 +93,7 @@ export default function RootLayout({
               name: "The Hope Yoga Wellness Studio",
               founder: {
                 "@type": "Person",
-                name: "Aakash Bora",
+                name: "Akash Bora",
               },
               description:
                 "Transform your health, wellness, and lifestyle naturally through Yoga, Naturopathy, Therapeutic Healing, Wellness Programs, and Holistic Treatments.",

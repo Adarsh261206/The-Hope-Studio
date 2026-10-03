@@ -8,9 +8,9 @@ import { ArrowUpRight } from "lucide-react"
 
 const experts = [
   {
-    name: "Aakash Bora",
+    name: "Akash Bora",
     role: "Founder · Hatha & Vinyasa Yoga",
-    credentials: "11+ Years Experience, Holistic Wellness",
+    credentials: "16+ Years Experience, Holistic Wellness",
     image: "/images/people/founder.jpg",
     href: "/experts/yoga-trainers",
   },

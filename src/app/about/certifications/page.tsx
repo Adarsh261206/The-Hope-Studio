@@ -87,7 +87,7 @@ export default function CertificationsPage() {
         <SectionHeader
           title="Our Certifications & Expertise"
           subtitle="Credentials"
-          description="Our founder Aakash Bora and our team bring a wealth of certified expertise across multiple holistic wellness disciplines."
+          description="Our founder Akash Bora and our team bring a wealth of certified expertise across multiple holistic wellness disciplines."
         />
 
         <motion.div

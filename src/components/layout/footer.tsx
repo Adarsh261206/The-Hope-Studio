@@ -44,10 +44,10 @@ export function Footer() {
                 />
               </Link>
               <div className="mt-4 space-y-1">
-                <p className="text-sm font-sans font-medium text-white/90">Founded by: Aakash Bora</p>
+                <p className="text-sm font-sans font-medium text-white/90">Founded by: Akash Bora</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-white/60 font-sans">
-                  <span>11+ Years Experience</span>
-                  <span>8500+ Lives Impacted</span>
+                  <span>16+ Years Experience</span>
+                  <span>10,000+ Lives Impacted</span>
                 </div>
               </div>
               <p className="mt-4 body-regular text-white/70 leading-relaxed text-sm">

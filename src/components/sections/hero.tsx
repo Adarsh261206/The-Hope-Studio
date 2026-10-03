@@ -111,8 +111,8 @@ export function HeroSection() {
             className="mt-6 sm:mt-8 flex flex-wrap gap-2.5 sm:gap-3"
           >
             {[
-              { value: "11+", label: "Years Experience" },
-              { value: "8500+", label: "Lives Impacted" },
+              { value: "16+", label: "Years Experience" },
+              { value: "10,000+", label: "Lives Impacted" },
             ].map((stat) => (
               <div
                 key={stat.label}

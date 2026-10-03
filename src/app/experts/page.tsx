@@ -32,9 +32,9 @@ const categories = [
 
 const featuredExperts = [
   {
-    name: "Aakash Bora",
+    name: "Akash Bora",
     role: "Founder & Lead Yoga Instructor",
-    bio: "With deep expertise in traditional yoga practices, Aakash founded The Hope Yoga Wellness Studio to create a sanctuary for holistic healing through Yoga, Naturopathy, and wellness therapies.",
+    bio: "With deep expertise in traditional yoga practices, Akash founded The Hope Yoga Wellness Studio to create a sanctuary for holistic healing through Yoga, Naturopathy, and wellness therapies.",
   },
   {
     name: "Dr. Arjun Mehta",
@@ -77,7 +77,7 @@ export default function ExpertsPage() {
           </span>
           <h1 className="heading-1 text-white">Our Experts</h1>
           <p className="mt-4 body-large text-white/80 max-w-lg mx-auto">
-            Meet Aakash Bora and the team of wellness practitioners at The Hope Yoga Wellness Studio — experts in Yoga, Naturopathy, Massage Therapy, Sound Healing, and more.
+            Meet Akash Bora and the team of wellness practitioners at The Hope Yoga Wellness Studio — experts in Yoga, Naturopathy, Massage Therapy, Sound Healing, and more.
           </p>
         </motion.div>
       </section>

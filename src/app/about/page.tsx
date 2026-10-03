@@ -17,7 +17,7 @@ import { ArrowUpRight, Heart, Star, Leaf } from "lucide-react"
 import { cn } from "@/lib/cn"
 
 const stats = [
-  { value: "11+", label: "Years of Experience" },
+  { value: "16+", label: "Years of Experience" },
   { value: "8.5K+", label: "Lives Impacted" },
   { value: "50+", label: "Expert Practitioners" },
 ]
@@ -98,8 +98,8 @@ export default function AboutPage() {
             variants={fadeUp}
             className="mt-4 body-large text-white/80 max-w-xl mx-auto"
           >
-            Founded by Aakash Bora with over 11 years of experience, The Hope Yoga
-            Wellness Studio has impacted over 8,500 lives through the power of yoga.
+            Founded by Akash Bora with over 16 years of experience, The Hope Yoga
+            Wellness Studio has impacted over 10,000 lives through the power of yoga.
           </motion.p>
         </motion.div>
       </section>
@@ -131,11 +131,11 @@ export default function AboutPage() {
           </motion.div>
           <motion.div variants={slideLeft}>
             <p className="body-regular text-text-body leading-relaxed">
-              The Hope Yoga Wellness Studio was founded by Aakash Bora, who
-              brings over 11 years of dedicated experience in yoga and holistic
+              The Hope Yoga Wellness Studio was founded by Akash Bora, who
+              brings over 16 years of dedicated experience in yoga and holistic
               wellness. What began as a passion for sharing the transformative
               power of yoga has grown into a sanctuary that has impacted over
-              8,500 lives.
+              10,000 lives.
             </p>
             <p className="body-regular text-text-body leading-relaxed mt-4">
               Over the years, we have welcomed students from all walks of life,

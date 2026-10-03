@@ -37,7 +37,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "Aakash Bora's approach to holistic wellness is truly unique. The combination of Yogic practices, Naturopathy, and therapeutic treatments creates a complete wellness experience. I have recommended The Hope to my entire family.",
+    quote: "Akash Bora's approach to holistic wellness is truly unique. The combination of Yogic practices, Naturopathy, and therapeutic treatments creates a complete wellness experience. I have recommended The Hope to my entire family.",
     name: "Vikram Singh",
     role: "Fitness Enthusiast",
     rating: 5,
@@ -49,7 +49,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I was dealing with severe burnout and sleep issues when I found The Hope. Through their Stress Management Yoga and personalized wellness plan, I have regained my energy and peace of mind. Aakash is a wonderful guide.",
+    quote: "I was dealing with severe burnout and sleep issues when I found The Hope. Through their Stress Management Yoga and personalized wellness plan, I have regained my energy and peace of mind. Akash is a wonderful guide.",
     name: "Arun Kumar",
     role: "Stress Management Program",
     rating: 5,

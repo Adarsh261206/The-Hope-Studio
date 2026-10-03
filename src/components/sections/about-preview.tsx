@@ -8,12 +8,12 @@ import { ArrowUpRight } from "lucide-react"
 
 const stats = [
   {
-    value: "11+",
+    value: "16+",
     title: "Years Experience",
-    description: "Over a decade of dedicated practice in Yoga, Naturopathy, and Holistic Wellness.",
+    description: "Over 16 years of dedicated practice in Yoga, Naturopathy, and Holistic Wellness.",
   },
   {
-    value: "8500+",
+    value: "10,000+",
     title: "Lives Impacted",
     description: "Thousands of individuals transformed through our wellness programs and therapeutic treatments.",
   },
@@ -104,7 +104,7 @@ export function AboutPreviewSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="body-large text-text-body leading-relaxed"
         >
-          Founded by <strong className="text-deep">Aakash Bora</strong>, our mission is to help individuals achieve healthier, balanced, and stress-free lives through Yoga, Naturopathy, Nutrition, and Holistic Wellness.
+          Founded by <strong className="text-deep">Akash Bora</strong>, our mission is to help individuals achieve healthier, balanced, and stress-free lives through Yoga, Naturopathy, Nutrition, and Holistic Wellness.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export function AboutPreviewSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="body-large text-text-body leading-relaxed mt-4"
         >
-          With over <strong className="text-deep">11 years of experience</strong> and more than <strong className="text-deep">8,500 lives</strong> positively impacted, we have successfully guided individuals toward improved physical health, emotional well-being, mental clarity, and sustainable lifestyle changes.
+          With over <strong className="text-deep">16 years of experience</strong> and more than <strong className="text-deep">10,000 lives</strong> positively impacted, we have successfully guided individuals toward improved physical health, emotional well-being, mental clarity, and sustainable lifestyle changes.
         </motion.p>
       </div>
 

@@ -14,12 +14,12 @@ const chapters = [
   {
     title: "The Beginning",
     content:
-      "The Hope Yoga Wellness Studio began with a vision — Aakash Bora's deep passion for yoga and its power to transform lives. With over 11 years of dedicated practice and teaching, Aakash set out to create a space where authentic yoga could be accessible to everyone, regardless of their experience level.",
+      "The Hope Yoga Wellness Studio began with a vision — Akash Bora's deep passion for yoga and its power to transform lives. With over 16 years of dedicated practice and teaching, Akash set out to create a space where authentic yoga could be accessible to everyone, regardless of their experience level.",
   },
   {
     title: "Growing Impact",
     content:
-      "Through unwavering commitment and authentic teaching, the studio grew from small, intimate classes to a thriving wellness community. Each session became a stepping stone, impacting over 8,500 lives along the way. Students came not just for asanas, but for the profound sense of peace and purpose they found on the mat.",
+      "Through unwavering commitment and authentic teaching, the studio grew from small, intimate classes to a thriving wellness community. Each session became a stepping stone, impacting over 10,000 lives along the way. Students came not just for asanas, but for the profound sense of peace and purpose they found on the mat.",
   },
   {
     title: "Deepening Roots",
@@ -29,7 +29,7 @@ const chapters = [
   {
     title: "Looking Ahead",
     content:
-      "Today, The Hope Yoga Wellness Studio continues to grow — deepening roots while reaching outward. With Aakash Bora's vision at the helm, the studio remains committed to spreading the light of yoga, one breath, one practice, one life at a time.",
+      "Today, The Hope Yoga Wellness Studio continues to grow — deepening roots while reaching outward. With Akash Bora's vision at the helm, the studio remains committed to spreading the light of yoga, one breath, one practice, one life at a time.",
   },
 ]
 
@@ -78,7 +78,7 @@ export default function OurStoryPage() {
           <SectionHeader
             title="The Journey of The Hope Yoga Wellness Studio"
             subtitle="Our Timeline"
-            description="From a single vision to a thriving community of over 8,500 lives impacted — our story is one of passion, purpose, and the transformative power of yoga."
+            description="From a single vision to a thriving community of over 10,000 lives impacted — our story is one of passion, purpose, and the transformative power of yoga."
             align="left"
           />
         </div>

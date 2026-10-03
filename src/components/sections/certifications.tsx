@@ -59,7 +59,7 @@ export function CertificationsSection() {
           Certifications & Expertise
         </h2>
         <p className="mt-4 body-large text-text-body max-w-[35rem] mx-auto">
-          Our founder Aakash Bora and our team bring a wealth of certified expertise across multiple holistic wellness disciplines.
+          Our founder Akash Bora and our team bring a wealth of certified expertise across multiple holistic wellness disciplines.
         </p>
       </div>
 

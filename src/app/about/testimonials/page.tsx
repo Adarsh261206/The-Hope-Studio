@@ -19,7 +19,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "I came here seeking relief from chronic stress and left with so much more than I ever imagined. Aakash and the team are deeply knowledgeable, and the atmosphere is nothing short of magical. The Panchakarma therapy exceeded all my expectations.",
+    quote: "I came here seeking relief from chronic stress and left with so much more than I ever imagined. Akash and the team are deeply knowledgeable, and the atmosphere is nothing short of magical. The Panchakarma therapy exceeded all my expectations.",
     name: "Rahul Verma",
     title: "Software Engineer",
     rating: 5,
@@ -31,7 +31,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "As someone who had never done yoga before, I was nervous. But Aakash and the instructors made me feel so welcome. Now yoga is an indispensable part of my life. I've also lost 12 kgs in 4 months through their wellness program!",
+    quote: "As someone who had never done yoga before, I was nervous. But Akash and the instructors made me feel so welcome. Now yoga is an indispensable part of my life. I've also lost 12 kgs in 4 months through their wellness program!",
     name: "Amit Tiwari",
     title: "Teacher",
     rating: 5,
@@ -61,7 +61,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    quote: "The corporate wellness program has been a blessing for our team. Employee satisfaction scores have gone up by 40% since we started. Aakash's stress management workshops are practical, engaging, and deliver real results.",
+    quote: "The corporate wellness program has been a blessing for our team. Employee satisfaction scores have gone up by 40% since we started. Akash's stress management workshops are practical, engaging, and deliver real results.",
     name: "Rajesh Mehta",
     title: "HR Director",
     rating: 5,

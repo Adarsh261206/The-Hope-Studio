@@ -9,9 +9,9 @@ import Image from "next/image"
 
 const trainers = [
   {
-    name: "Aakash Bora",
+    name: "Akash Bora",
     specialty: "Hatha & Vinyasa Yoga",
-    bio: "Founder of The Hope Yoga Wellness Studio, Aakash brings deep traditional yoga knowledge and a passion for holistic healing to every session.",
+    bio: "Founder of The Hope Yoga Wellness Studio, Akash brings deep traditional yoga knowledge and a passion for holistic healing to every session.",
     gradient: "from-rose-200/60 to-amber-200/60",
     image: "/images/people/founder.jpg",
   },

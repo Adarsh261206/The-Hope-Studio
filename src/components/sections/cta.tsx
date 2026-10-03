@@ -45,7 +45,7 @@ export function CTASection() {
             Take the First Step Toward a Healthier, Happier You
           </h2>
           <p className="mt-5 body-large text-text-body leading-relaxed">
-            Ready to transform your life? Book a consultation with Aakash Bora and discover a personalized wellness plan that integrates Yoga, Naturopathy, and Holistic Healing tailored to your unique needs.
+            Ready to transform your life? Book a consultation with Akash Bora and discover a personalized wellness plan that integrates Yoga, Naturopathy, and Holistic Healing tailored to your unique needs.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
